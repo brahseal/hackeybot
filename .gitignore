@@ -1,0 +1,99 @@
+ commands module to reduce time/space complexiesar:hackeybot Cesar$ cd ..
+MBP-de-Cesar:Web Cesar$ ls
+ECommerce				codeinventory.github.io			jaysbot					smartbot
+GREENPLUG WEBAPP UI .compressed.pdf	database.db.db				jaysbot.zip				social-website
+Pasta Sem Título			docker					jogo-ufsc				tensorflow-seq2seq-chatbot
+blog					first-website				mlbchatangobot				twitter-clone
+bootcamp				frontend-intern-challenge		portfolio
+brahseal				hackeybot				redditchatangobot
+chatbot					hackeybot-local				selenium-project
+MBP-de-Cesar:Web Cesar$ cd hackeybot-local/
+MBP-de-Cesar:hackeybot-local Cesar$ ls
+README.md		ch.py			database.db.db		grills.py		leafs.py		mlb_data.py		requirements.txt
+__pycache__		chatterbot		doggos.py		hackey.py		meme_gen.py		penny.py		smartbot.py
+bot.py			commands.py		favorite_team.py	helper.py		mlb.py			random_responses.py	twitter.py
+MBP-de-Cesar:hackeybot-local Cesar$ vim .gitignore
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+~                                                                                                                                                                                   
+~                                                                                                                                                                                   
+".gitignore" 46L, 621C
+
