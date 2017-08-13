@@ -5,10 +5,10 @@
   Python 3.6.1
 
 **How to run:**
-    >Clone or download this repository on a folder
-    >Access the folder from the terminal and run "pip install -r requirements.txt"
-    >This will install mlbgame api praw(reddit api), tweepy(twitter api) and others
-    >After the install is complete run python bot.py
+    1. Clone or download this repository on a folder
+    2. Access the folder from the terminal and run "pip install -r requirements.txt"
+    3. This will install mlbgame api praw(reddit api), tweepy(twitter api) and others
+    4. After the install is complete run python bot.py
 
 **MLB Commands List:**
 
