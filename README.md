@@ -1,4 +1,14 @@
+
 # hackeybot
+
+Requirements:
+  Python 3.6.1
+
+How to run:
+    Clone or download this repository on a folder
+    Access the folder from the terminal and run "pip install -r requirements.txt"
+    This will install mlbgame api praw(reddit api), tweepy(twitter api) and others
+    After the install is complete run python bot.py
 
 MLB Commands List:
 
@@ -16,7 +26,35 @@ MLB Commands List:
     !stats team_name player_name - posts the game stats for the player_name in the arguments
     !seasonstats team_name player_name - posts the season stats for player_name in the arguments
 
-Note:
-    #use without team_name parameter to get command for favorite_team
-    #team_name = should be underscore e.g: !score cubs
-    #information is in nearly real time
+#(use without team_name parameter to get command for favorite_team)
+
+Hackey commands:
+    !username - posts a random message for username in parameter (If you're not there feel free to create a pull request and add yourself or ask me and i'll do it)
+    !gif - posts a random gif blue jays related
+    !faggot - posts pic of pillar screaming the word "faggot"
+    !biglenny - posts big lenny
+    !13reasons - posts Ross 13 reasons to kill himself
+    !venn - posts hackey chat venn diagram
+    !consent - posts age of consent in canada
+    !gibby - posts a random gibby image
+    !shapoo - screams SHAPOOOO
+    !penny - posts a random Penny Oleksiak picture
+    !pennyage - posts penny's age on the current day (buggy)
+    !pennydance - posts epic penny's dance gif
+    !doggo - posts a random doggo from the dog.ceo api
+    !doggo breed - posts a random doggo by breed from the dog.ceo api
+    !fap - posts a random pic from the /r/gentlemanboners subreddit
+    !brazzers - posts a random pic from the /r/brazilianbabes subreddit (NSFW)
+    !dome - posts if the dome is open or not in the blue jays game
+    !tip - posts a random tip from /r/ShittyLifeProTips
+    !thought - posts a random thought from /r/Showerthoughts
+    !joke - posts a random joke from /r/Jokes
+    !motivation - posts a motivation image from /r/GetMotivated
+    !quote - posts a random quote from /r/quotes
+    !countdown - posts the coutndown for leafs 2017 preseason
+
+#Whats to come:
+
+    leafs module (dank leafs memes and live game stats commands) (I'll try to make it work for other teams too)
+    memegen integration (generate customized memes instantly from memegen created by: mdoublee)
+    suggestions/bug reporting page
