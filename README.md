@@ -1,16 +1,16 @@
 
 # hackeybot
 
-Requirements:
+**Requirements:**
   Python 3.6.1
 
-How to run:
-    Clone or download this repository on a folder
-    Access the folder from the terminal and run "pip install -r requirements.txt"
-    This will install mlbgame api praw(reddit api), tweepy(twitter api) and others
-    After the install is complete run python bot.py
+**How to run:**
+    >Clone or download this repository on a folder
+    >Access the folder from the terminal and run "pip install -r requirements.txt"
+    >This will install mlbgame api praw(reddit api), tweepy(twitter api) and others
+    >After the install is complete run python bot.py
 
-MLB Commands List:
+**MLB Commands List:**
 
     !score team_name - posts the score for the team name in the argument
     !pitching team_name - posts the current pitcher for the current game of the team in argument
@@ -26,9 +26,9 @@ MLB Commands List:
     !stats team_name player_name - posts the game stats for the player_name in the arguments
     !seasonstats team_name player_name - posts the season stats for player_name in the arguments
 
-#(use without team_name parameter to get command for favorite_team)
+**use without team_name parameter to get command for favorite_team**
 
-Hackey commands:
+**Hackey commands:**
     !username - posts a random message for username in parameter (If you're not there feel free to create a pull request and add yourself or ask me and i'll do it)
     !gif - posts a random gif blue jays related
     !faggot - posts pic of pillar screaming the word "faggot"
@@ -53,7 +53,7 @@ Hackey commands:
     !quote - posts a random quote from /r/quotes
     !countdown - posts the coutndown for leafs 2017 preseason
 
-#Whats to come:
+**Whats to come:**
 
     leafs module (dank leafs memes and live game stats commands) (I'll try to make it work for other teams too)
     memegen integration (generate customized memes instantly from memegen created by: mdoublee)
