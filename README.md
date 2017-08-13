@@ -4,7 +4,7 @@
 **Requirements:**
   Python 3.6.1
 
-**How to run:**
+**How to run:**  
     1. Clone or download this repository on a folder  
     2. Access the folder from the terminal and run "pip install -r requirements.txt"  
     3. This will install mlbgame api praw(reddit api), tweepy(twitter api) and others  
@@ -26,9 +26,10 @@
     !stats team_name player_name - posts the game stats for the player_name in the arguments  
     !seasonstats team_name player_name - posts the season stats for player_name in the arguments  
 
-**use without team_name parameter to get command for favorite_team**
+**use without team_name parameter to get command for favorite_team**  
 
-**Hackey commands:**
+**Hackey commands:**  
+
     !username - posts a random message for username in parameter (If you're not there feel free to create a pull request and add yourself or ask me and i'll do it)  
     !gif - posts a random gif blue jays related  
     !faggot - posts pic of pillar screaming the word "faggot"  
