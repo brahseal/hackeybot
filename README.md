@@ -7,7 +7,7 @@
 **How to run:**  
     1. Clone or download this repository on a folder  
     2. Access the folder from the terminal and run "pip install -r requirements.txt"  
-    3. This will install mlbgame api praw(reddit api), tweepy(twitter api) and others  
+    3. This will install mlbgame api, praw(reddit api), tweepy(twitter api) and others  
     4. After the install is complete run python bot.py  
 
 **MLB Commands List:**
@@ -52,7 +52,7 @@
     !joke - posts a random joke from /r/Jokes  
     !motivation - posts a motivation image from /r/GetMotivated  
     !quote - posts a random quote from /r/quotes  
-    !countdown - posts the coutndown for leafs 2017 preseason  
+    !countdown - posts the countdown for leafs 2017 preseason  
 
 **Whats to come:**
 

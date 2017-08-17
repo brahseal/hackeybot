@@ -1,15 +1,25 @@
 import mlbgame
-import helper
-import time
+import current_time
+from datetime import datetime
+from apscheduler.scheduler import Scheduler
 
-year = helper.convert_str(time.strftime("%Y"))
-month = helper.convert_str(time.strftime("%m"))
-day = helper.convert_str(time.strftime("%d"))
-hour = helper.convert_str(time.strftime("%H"))
+# Start the scheduler
+sched = Scheduler()
+sched.start()
 
-#rewing the day if it's not past 11 a.m (need to check if month is turning)
-if hour < 11:
-    day -= 1
+year = current_time.get_year()
+month = current_time.get_month()
+day = current_time.get_day()
+
+def update_time():
+    global year
+    year = current_time.get_year()
+    global month
+    month = current_time.get_month()
+    global day
+    day = current_time.get_day()
+
+sched.add_interval_job(update_time, hours=4)
 
 teams_dictionary = {'cubs': "Cubs", 'yankees': "Yankees", 'redsox': "Red Sox",
                     'mets': "Mets", 'indians': "Indians", 'giants': "Giants",
@@ -24,6 +34,7 @@ teams_dictionary = {'cubs': "Cubs", 'yankees': "Yankees", 'redsox': "Red Sox",
                     'padres': "Padres", 'nats': "Nationals", 'mariners': "Mariners"}
 
 def get_all_game_scores():
+    print(year)
     games = mlbgame.day(year, month, day)
     games_list = []
     for game in games:
@@ -40,16 +51,19 @@ def get_todays_game( team_name ):
         return None
 
 def get_game_overview_xml( team_name ):
+    print(year)
     game = get_todays_game(team_name)
     overview = mlbgame.data.get_overview(game.game_id)
     return overview
 
 def get_game_overview_dict( team_name ):
+    print(year)
     game = get_todays_game(team_name)
     overview = mlbgame.game.overview(game.game_id)
     return overview
 
 def get_game_status( team_name ):
+    print(year)
     game = get_todays_game(team_name)
     return game.game_status
 
