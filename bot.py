@@ -36,7 +36,7 @@ class bot(ch.RoomManager):
         if prfx:
             room.message(commands.get_message_from_command(cmd, args, player))
         print(cmd,args,player)
-rooms = ["testingbotfam", "bb6969", "bluejays69", "thepenaltybox"]
+rooms = ["bb6969", "bluejays69", "thepenaltybox"]
 username = bot_account
 password = bot_password
 

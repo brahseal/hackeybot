@@ -50,9 +50,16 @@ hackey_commands = {
     "biglenny": hackey.big_lenny,
     "13reasons": hackey.reasons,
     "venn": hackey.venn,
-    "consent": hackey.consent,
+    "ageofconsent": hackey.consent,
     "gibby": hackey.gibbys,
     "shapoo": hackey.shapoo,
+    "swing": hackey.swing,
+    "ninja": hackey.ninja,
+    "moose": hackey.moose,
+    "jay": hackey.jay,
+    "sens": hackey.sens,
+    "nucks": hackey.nucks,
+    "don": hackey.don,
 }
 
 other_commands = {
@@ -61,7 +68,7 @@ other_commands = {
         "pennydance": penny.get_penny_dance,
 
         "doggo": doggos.get_doggo,
-
+        "breeds": doggos.get_all_breeds_name,
         "fap": grills.get_qts,
         "brazzers": grills.get_brazzers,
 
