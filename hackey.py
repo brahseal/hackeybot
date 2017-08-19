@@ -16,7 +16,7 @@ natty = ["roids", "dat manlet in the gym", "body builder", "jk i love him", "thi
 mdoublee = ["http://i.imgur.com/bEq195P.png"]
 
 gibbys = ["http://zippy.gfycat.com/InconsequentialIncompleteIndianrhinoceros.gif", "http://sports.cbsimg.net/images/visual/whatshot/USATSI_7387029.jpg",
-          "http://i.imgur.com/beTLNBC.jpg","http://i.imgur.com/YfvE3Ki.gif", "http://i.imgur.com/WzIH07m.gif"]
+          "http://i.imgur.com/beTLNBC.jpg","http://i.imgur.com/YfvE3Ki.gif", "http://i.imgur.com/WzIH07m.gif", "http://i.imgur.com/Xov522t.gif"]
 
 deez = ["DEEEEEEEEZ", "footy bro", "the only american footy fan", "dank musical taste"]
 
