@@ -154,7 +154,8 @@ def get_inhole_batter( team_name ):
     root = tree.getroot()
 
     for data in root:
-        for current_inhole in data.iter('due_up_inhole'):
+        print(data)
+        for current_inhole in data.iter('current_inhole'):
             player_id = current_inhole.attrib['id']
             current_inhole = ' http://gdx.mlb.com/images/gameday/mugshots/mlb/'+player_id+'@4x.jpg '+ current_inhole.attrib['first_name'] + " " + current_inhole.attrib['last_name'] + " is in the hole "
             return current_inhole
@@ -249,3 +250,5 @@ def get_player_season_stats( team_name, player_name ):
             return message
 
     return "Sorry, i don't recognize that name, please use the name on the player uniform, or make sure he plays for the " + team_name
+
+get_inhole_batter("jays")
