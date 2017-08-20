@@ -3,6 +3,8 @@ wings = ["http://m.mlb.com/assets/images/1/3/0/229305130/cuts/morales_1280_boxjp
 
 brahseal = ["brahseal is my dad"]
 
+pearce = ["http://i.imgur.com/3DLpB7s.jpg"]
+
 avs = ["based avs", "tyba", "god", "praise mr avs", "ty for disseminate", "@theavs :x"]
 
 pudge = ["based pudge", "pedo but my friend", "go leafs go", "leafs bro"]
@@ -14,7 +16,7 @@ natty = ["roids", "dat manlet in the gym", "body builder", "jk i love him", "thi
 mdoublee = ["http://i.imgur.com/bEq195P.png"]
 
 gibbys = ["http://zippy.gfycat.com/InconsequentialIncompleteIndianrhinoceros.gif", "http://sports.cbsimg.net/images/visual/whatshot/USATSI_7387029.jpg",
-          "http://i.imgur.com/beTLNBC.jpg","http://i.imgur.com/YfvE3Ki.gif", "http://i.imgur.com/WzIH07m.gif"]
+          "http://i.imgur.com/beTLNBC.jpg","http://i.imgur.com/YfvE3Ki.gif", "http://i.imgur.com/WzIH07m.gif", "http://i.imgur.com/Xov522t.gif"]
 
 deez = ["DEEEEEEEEZ", "footy bro", "the only american footy fan", "dank musical taste"]
 
@@ -65,6 +67,8 @@ jay = ["http://i.imgur.com/P9z9v0E.jpg, http://i.imgur.com/edFUR1l.jpg"]
 sens = ["sens warming up for the 2017 season http://www.sensplex.ca/sites/default/files/ltp_background.jpg", "https://pbs.twimg.com/media/DEEl6TOWAAAYK1M.jpg", "https://pbs.twimg.com/media/CFdQhTcUkAEe6nD.jpg", "https://pbs.twimg.com/media/C73FV6TVQAQBnmZ.jpg:large", "sens team meeting https://nhl.bamcontent.com/images/photos/290629054/1024x576/cut.jpg"]
 
 nucks = ["WE ARE ALL CANUCKS http://i.imgur.com/wxbqCuS.png"]
+
+smoak = ["MVP"]
 
 jays_gifs = ["http://68.media.tumblr.com/d64bc455e32f338c9924b00369d864b9/tumblr_ordab63tMc1tx72cpo1_500.gif", "http://68.media.tumblr.com/686933e10b781500291cf8d55d2c89b4/tumblr_nwwsvxHi2b1r37slco1_540.gif",
             "http://68.media.tumblr.com/4c076cabfaa0dbb895569e0fcaff79ec/tumblr_ntb3wzfyMf1r37slco1_500.gif",

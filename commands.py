@@ -37,6 +37,7 @@ hackey_commands = {
     "deez": hackey.deez,
     "swishhhhh": hackey.swishhhhh,
     "pond": hackey.pond,
+    "pearce": hackey.pearce,
     "zezi": hackey.zezi,
     "tim": hackey.coachtim,
     "kawa": hackey.kawa,
@@ -60,6 +61,7 @@ hackey_commands = {
     "sens": hackey.sens,
     "nucks": hackey.nucks,
     "don": hackey.don,
+    "smoak": hackey.smoak,	
 }
 
 other_commands = {
