@@ -39,7 +39,7 @@ pude = ["marijuana enthusiast", "finland bro"]
 
 coachtim = ["his dad knows penny :o"]
 
-kawa = ["I AM JAPANEEEEESEEEEEE", "Bring back Kawa"]
+kawa = ["I AM JAPANEEEEESEEEEEE", "Bring back Kawa" "https://img.buzzfeed.com/buzzfeed-static/static/2015-10/6/16/imagebuzz/webdr13/anigif_optimized-16449-1444162636-6.gif"]
 
 evbo = ["evbola", "jk", "love this nigga", "don't get the hate", "<3 evbo"]
 
