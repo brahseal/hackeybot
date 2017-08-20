@@ -25,6 +25,7 @@
     !starting team_name - posts the starting pitcher for the team_name game  
     !stats team_name player_name - posts the game stats for the player_name in the arguments  
     !seasonstats team_name player_name - posts the season stats for player_name in the arguments  
+    !mugshot team_name player_name - posts the mugshot for given player
 
 **use without team_name parameter to get command for favorite_team**  
 
@@ -54,8 +55,20 @@
     !quote - posts a random quote from /r/quotes  
     !countdown - posts the countdown for leafs 2017 preseason  
 
+**memegen:**   
+
+        !go2bed chatango_username or team_name player_name   
+        !hang chatango_username or team_name player_name   
+        !kill chatango_username or team_name player_name  
+        !golf chatango_username or team_name player_name   
+        !poop chatango_username or team_name player_name   
+        !trash chatango_username or team_name player_name   
+        !baby chatango_username or team_name player_name   
+        !penbox chatango_username or team_name player_name   
+
+        - Creates the desired meme from 46.228.199.201/mdoublee/memegen2/ Credits to mdoublee
+
 **Whats to come:**
 
     leafs module (dank leafs memes and live game stats commands) (I'll try to make it work for other teams too)  
-    memegen integration (generate customized memes instantly from memegen created by: mdoublee)  
     suggestions/bug reporting page  
