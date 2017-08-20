@@ -39,7 +39,11 @@ pude = ["marijuana enthusiast", "finland bro"]
 
 coachtim = ["his dad knows penny :o"]
 
-kawa = ["I AM JAPANEEEEESEEEEEE", "Bring back Kawa" "https://img.buzzfeed.com/buzzfeed-static/static/2015-10/6/16/imagebuzz/webdr13/anigif_optimized-16449-1444162636-6.gif"]
+kawa = ["I AM JAPANEEEEESEEEEEE", "Bring back Kawa" "https://img.buzzfeed.com/buzzfeed-static/static/2015-10/6/16/imagebuzz/webdr13/anigif_optimized-16449-1444162636-6.gif",
+        "http://media.giphy.com/media/VEMvkcsQRkPJu/giphy.gif", "http://mlbfancave.mlb.com/assets/images/custom/kawasakidance_149mg9so.gif", "http://assets.sbnation.com/assets/2902327/kawasakidance.gif",
+        "http://mlb.mlb.com/images/9/4/4/132070944/062115_tor_kawasaki_dance_med_dwjlruja.gif", "http://media.tenor.com/images/0a004a7ed65b57c8638a9f00cc836314/tenor.gif", "http://mlb.mlb.com/images/0/9/4/131866094/062015_tor_kawasaki_mime_dance_med_k76sv2my.gif",
+        "http://mlb.mlb.com/images/7/8/8/147843788/090615_tor_kawasaki_muscle_med_bnxxrqop.gif", "are u from?", "http://i.imgur.com/S5z8HrF.gif",
+        "http://assets1.sportsnet.ca/wp-content/uploads/2017/02/Screen-Shot-2017-02-28-at-1.14.05-PM.png"]
 
 evbo = ["evbola", "jk", "love this nigga", "don't get the hate", "<3 evbo"]
 
@@ -86,4 +90,4 @@ jays_gifs = ["http://68.media.tumblr.com/d64bc455e32f338c9924b00369d864b9/tumblr
             "http://giant.gfycat.com/FluidFrigidAfricancivet.gif", "http://68.media.tumblr.com/137003018c0b9c2c2d2653e8d321029f/tumblr_obd7y7rbbi1r37slco1_500.gif",
             "https://cdn2.vox-cdn.com/thumbor/bXig9ueeRz29NY98jfYPjQi5WcY=/cdn0.vox-cdn.com/uploads/chorus_asset/file/6250539/Jimenez-Hutchison-Boink2.0.gif",
             "http://68.media.tumblr.com/c5579721ac126b8dd3a197d304a3e1a4/tumblr_oqo9bu649l1r37slco1_500.gif", "http://3.bp.blogspot.com/-TB-PmJxYZTs/T68DMZjIKiI/AAAAAAAAD0U/8VqUOM3O3J0/s1600/Bautista-Lawire-dance.gif",
-            "http://38.media.tumblr.com/91bd0ac07f080e480b3fd21a83bad418/tumblr_noodm7jn3f1r37slco1_500.gif", "http://68.media.tumblr.com/6f1f4174c87ae70a8b5210744c523fe6/tumblr_o6tlcdrjuu1tx72cpo1_500.gif"]
+            "http://38.media.tumblr.com/91bd0ac07f080e480b3fd21a83bad418/tumblr_noodm7jn3f1r37slco1_500.gif", "http://68.media.tumblr.com/6f1f4174c87ae70a8b5210744c523fe6/tumblr_o6tlcdrjuu1tx72cpo1_500.gif","https://img.buzzfeed.com/buzzfeed-static/static/2015-10/6/16/imagebuzz/webdr13/anigif_optimized-16449-1444162636-6.gif"]
