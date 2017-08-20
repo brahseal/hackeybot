@@ -19,7 +19,9 @@ gibbys = ["http://zippy.gfycat.com/InconsequentialIncompleteIndianrhinoceros.gif
           "http://i.imgur.com/beTLNBC.jpg","http://i.imgur.com/YfvE3Ki.gif", "http://i.imgur.com/WzIH07m.gif", "http://i.imgur.com/Xov522t.gif", "Good job son. Good job http://i.imgur.com/hPopXYK.gif",
           "Gibby gets tossed - then makes the pitching change anyway. http://i.imgur.com/2Q38HG5.gif", "Drinks after the game? Which one of you is buyin'? http://i.imgur.com/a5Hb5t6.gif",
           "You think that's impressive? You should see him do that with a Rolling Rock. http://i.imgur.com/Z0QGSoW.gif", "In this part of the zoo, we have the Gibbon - also known as the 'Gibby'. http://i.imgur.com/dmQXhxj.gif",
-           ]
+           "Just when you think he might start yelling, Gibby does this: http://i.imgur.com/rQR5qqZ.gif", "It takes true talent to make a bench look like a La-Z-Boy recliner. http://i.imgur.com/8qvad2q.gif",
+           "HEY, GET OFF MY DAMN LAWN http://i.imgur.com/jTAtytZ.gif", "http://i.imgur.com/dZDXwfr.gif", "http://i.imgur.com/Ysf7Q8p.gif","Dad, those boys are picking on me. You're fine. Everything's fine http://i.imgur.com/7YMhXEh.gif",
+           "Can we just win by this much? http://i.imgur.com/t5hvEpr.gif"]
 
 deez = ["DEEEEEEEEZ", "footy bro", "the only american footy fan", "dank musical taste"]
 
