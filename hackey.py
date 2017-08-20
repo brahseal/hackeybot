@@ -16,7 +16,10 @@ natty = ["roids", "dat manlet in the gym", "body builder", "jk i love him", "thi
 mdoublee = ["http://i.imgur.com/bEq195P.png"]
 
 gibbys = ["http://zippy.gfycat.com/InconsequentialIncompleteIndianrhinoceros.gif", "http://sports.cbsimg.net/images/visual/whatshot/USATSI_7387029.jpg",
-          "http://i.imgur.com/beTLNBC.jpg","http://i.imgur.com/YfvE3Ki.gif", "http://i.imgur.com/WzIH07m.gif", "http://i.imgur.com/Xov522t.gif"]
+          "http://i.imgur.com/beTLNBC.jpg","http://i.imgur.com/YfvE3Ki.gif", "http://i.imgur.com/WzIH07m.gif", "http://i.imgur.com/Xov522t.gif", "Good job son. Good job http://i.imgur.com/hPopXYK.gif",
+          "Gibby gets tossed - then makes the pitching change anyway. http://i.imgur.com/2Q38HG5.gif", "Drinks after the game? Which one of you is buyin'? http://i.imgur.com/a5Hb5t6.gif",
+          "You think that's impressive? You should see him do that with a Rolling Rock. http://i.imgur.com/Z0QGSoW.gif", "In this part of the zoo, we have the Gibbon - also known as the 'Gibby'. http://i.imgur.com/dmQXhxj.gif",
+           ]
 
 deez = ["DEEEEEEEEZ", "footy bro", "the only american footy fan", "dank musical taste"]
 
