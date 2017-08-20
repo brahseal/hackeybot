@@ -19,7 +19,7 @@ def update_time():
     global day
     day = current_time.get_day()
 
-sched.add_interval_job(update_time, hours=4)
+sched.add_interval_job(update_time, hours=1)
 
 teams_dictionary = {'cubs': "Cubs", 'yankees': "Yankees", 'redsox': "Red Sox",
                     'mets': "Mets", 'indians': "Indians", 'giants': "Giants",

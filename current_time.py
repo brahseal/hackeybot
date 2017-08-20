@@ -11,7 +11,7 @@ def get_day():
     hour = helper.convert_str(time.strftime("%H"))
     day = day = helper.convert_str(time.strftime("%d"))
     # rewing the day if it's not past 11 a.m (need to check if month is turning)
-    if hour < 11:
+    if hour < 10:
         day -= 1
     print(day)
     print(hour)
