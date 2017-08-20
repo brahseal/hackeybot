@@ -40,7 +40,7 @@ def get_current_pitcher( team_name ):
     for data in root:
         for current_pitcher in data.iter('current_pitcher'):
             player_id = current_pitcher.attrib['id']
-            current_pitcher = 'http://gdx.mlb.com/images/gameday/mugshots/mlb/'+player_id+'@4x.jpg ' + current_pitcher.attrib['first_name'] + " " + current_pitcher.attrib['last_name'] + " is currently pitching in the "+ team_name + " game. His record is " + current_pitcher.attrib['wins'] + "-" + current_pitcher.attrib['losses'] + "  with a " + current_pitcher.attrib['era'] + " ERA "
+            current_pitcher = 'http://gdx.mlb.com/images/gameday/mugshots/mlb/'+player_id+'.jpg ' + current_pitcher.attrib['first_name'] + " " + current_pitcher.attrib['last_name'] + " is currently pitching in the "+ team_name + " game. His record is " + current_pitcher.attrib['wins'] + "-" + current_pitcher.attrib['losses'] + "  with a " + current_pitcher.attrib['era'] + " ERA "
             print(current_pitcher)
             return current_pitcher
 
@@ -57,7 +57,7 @@ def get_current_batter( team_name ):
     for data in root:
         for current_batter in data.iter('current_batter'):
             player_id = current_batter.attrib['id']
-            current_batter = "http://gdx.mlb.com/images/gameday/mugshots/mlb/"+player_id+"@4x.jpg " + current_batter.attrib['first_name'] + " " + current_batter.attrib['last_name'] + " is batting."
+            current_batter = "http://gdx.mlb.com/images/gameday/mugshots/mlb/"+player_id+".jpg " + current_batter.attrib['first_name'] + " " + current_batter.attrib['last_name'] + " is batting."
             return current_batter
 
 def get_team_record( team_name ):
@@ -105,7 +105,7 @@ def get_pitching_line( team_name ):
     else:
         IP = str(pitcher_outs/3) + ""
 
-    message = "http://gdx.mlb.com/images/gameday/mugshots/mlb/"+pitcher_id+"@4x.jpg " + pitcher_stats['name'] + " pitching line: " + IP + "IP " + pitcher_er + "ER " + pitcher_hits +"H " + pitcher_so + "SO " + pitcher_walks + "BB " + pitcher_strikes + "-" + pitcher_np + " strikes/pitches "
+    message = "http://gdx.mlb.com/images/gameday/mugshots/mlb/"+pitcher_id+".jpg " + pitcher_stats['name'] + " pitching line: " + IP + "IP " + pitcher_er + "ER " + pitcher_hits +"H " + pitcher_so + "SO " + pitcher_walks + "BB " + pitcher_strikes + "-" + pitcher_np + " strikes/pitches "
     return message
 
 def get_game_time( team_name ):
@@ -141,7 +141,7 @@ def get_ondeck_batter( team_name ):
     for data in root:
         for current_ondeck in data.iter('current_ondeck'):
             player_id = current_ondeck.attrib['id']
-            current_ondeck = 'http://gdx.mlb.com/images/gameday/mugshots/mlb/'+player_id+'@4x.jpg ' + current_ondeck.attrib['first_name'] + " " + current_ondeck.attrib['last_name'] + " is on deck "
+            current_ondeck = 'http://gdx.mlb.com/images/gameday/mugshots/mlb/'+player_id+'.jpg ' + current_ondeck.attrib['first_name'] + " " + current_ondeck.attrib['last_name'] + " is on deck "
             return current_ondeck
 
 def get_inhole_batter( team_name ):
@@ -157,7 +157,7 @@ def get_inhole_batter( team_name ):
         print(data)
         for current_inhole in data.iter('current_inhole'):
             player_id = current_inhole.attrib['id']
-            current_inhole = ' http://gdx.mlb.com/images/gameday/mugshots/mlb/'+player_id+'@4x.jpg '+ current_inhole.attrib['first_name'] + " " + current_inhole.attrib['last_name'] + " is in the hole "
+            current_inhole = ' http://gdx.mlb.com/images/gameday/mugshots/mlb/'+player_id+'.jpg '+ current_inhole.attrib['first_name'] + " " + current_inhole.attrib['last_name'] + " is in the hole "
             return current_inhole
 
 def get_due_up_batters( team_name ):
@@ -177,14 +177,14 @@ def get_starting_pitcher( team_name ):
             for data in root:
                 for starting_pitcher in data.iter('home_probable_pitcher'):
                     starting_pitcher_id = starting_pitcher.attrib['id']
-                    starting_pitcher = ' http://gdx.mlb.com/images/gameday/mugshots/mlb/'+starting_pitcher_id+'@4x.jpg '+ starting_pitcher.attrib['first_name'] + " " + starting_pitcher.attrib['last_name'] + " is starting today for the " + team_name
+                    starting_pitcher = ' http://gdx.mlb.com/images/gameday/mugshots/mlb/'+starting_pitcher_id+'.jpg '+ starting_pitcher.attrib['first_name'] + " " + starting_pitcher.attrib['last_name'] + " is starting today for the " + team_name
                     return starting_pitcher
         else:
             for data in root:
 
                 for starting_pitcher in data.iter('away_probable_pitcher'):
                     starting_pitcher_id = starting_pitcher.attrib['id']
-                    starting_pitcher = ' http://gdx.mlb.com/images/gameday/mugshots/mlb/'+starting_pitcher_id+'@4x.jpg '+ starting_pitcher.attrib['first_name'] + " " + starting_pitcher.attrib['last_name'] + " is starting today for the " + team_name
+                    starting_pitcher = ' http://gdx.mlb.com/images/gameday/mugshots/mlb/'+starting_pitcher_id+'.jpg '+ starting_pitcher.attrib['first_name'] + " " + starting_pitcher.attrib['last_name'] + " is starting today for the " + team_name
                     return starting_pitcher
     elif game_status == "IN_PROGRESS":
         return mlb_data.teams_dictionary[team_name] + " game started already. The starting pitcher was " + get_pitching_line(team_name)
@@ -246,7 +246,7 @@ def get_player_season_stats( team_name, player_name ):
             player_slg = player['slg']
             player_ops = player['ops']
 
-            message = ' http://gdx.mlb.com/images/gameday/mugshots/mlb/'+player_id+'@4x.jpg ' + player_name + " " + player_avg + " AVG | " + player_obp + " OBP | " + player_slg + " SLG | " + player_ops + " OPS"
+            message = ' http://gdx.mlb.com/images/gameday/mugshots/mlb/'+player_id+'.jpg ' + player_name + " " + player_avg + " AVG | " + player_obp + " OBP | " + player_slg + " SLG | " + player_ops + " OPS"
             return message
 
     return "Sorry, i don't recognize that name, please use the name on the player uniform, or make sure he plays for the " + team_name
