@@ -276,3 +276,25 @@ def get_mugshot( team_name, player_uniform_name ):
     player_id = get_player_id(team_name, player_uniform_name)
     if player_id != None:
         return "http://gdx.mlb.com/images/gameday/mugshots/mlb/"+player_id+".jpg"
+
+def get_how_we_score( team_name ):
+    overview = mlb_data.get_game_overview_dict(team_name)
+
+    current_inning = overview['inning']
+    inning_state = overview['inning_state'].lower()
+    scoring_plays = []
+    events = mlb_data.get_game_events(team_name)
+    # print(events['1']['top'][0])
+    if is_team_at_home(team_name):
+        for inning in events:
+            for event in events[inning]['bottom']:
+                if 'scores' in event.des:
+                    scoring_plays.append(event.des)
+    else:
+        for inning in events:
+            for event in events[inning]['top']:
+                if 'scores' in event.des or 'homers' in event.des:
+                    scoring_plays.append(event.des)
+
+    last_3_scoring_plays = scoring_plays[-1:]
+    return ''.join(last_3_scoring_plays)

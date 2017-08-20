@@ -26,6 +26,7 @@ mlb_commands = {
     "stats": mlb.get_player_stats,
     "seasonstats": mlb.get_player_season_stats,
     "mugshot": mlb.get_mugshot,
+    "howdidwescore": mlb.get_how_we_score,
 }
 
 hackey_commands = {
