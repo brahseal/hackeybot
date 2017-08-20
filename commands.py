@@ -8,6 +8,7 @@ import twitter
 import random_responses
 import hackey
 import leafs
+import meme_gen
 
 mlb_commands = {
 
@@ -24,6 +25,7 @@ mlb_commands = {
     "starting": mlb.get_starting_pitcher,
     "stats": mlb.get_player_stats,
     "seasonstats": mlb.get_player_season_stats,
+    "mugshot": mlb.get_mugshot,
 }
 
 hackey_commands = {
@@ -61,7 +63,8 @@ hackey_commands = {
     "sens": hackey.sens,
     "nucks": hackey.nucks,
     "don": hackey.don,
-    "smoak": hackey.smoak,	
+    "smoak": hackey.smoak,
+    "lou": leafs.lou,
 }
 
 other_commands = {
@@ -83,16 +86,28 @@ other_commands = {
         "quote": random_responses.get_quote,
         "countdown": leafs.get_countdown,
     }
-
+meme_gen_commands = {
+    "go2bed": meme_gen.get_meme_bed,
+    "hang": meme_gen.get_meme_hang,
+    "kill": meme_gen.get_meme_grave,
+    "golf": meme_gen.get_meme_golf,
+    "poop": meme_gen.get_meme_pooper,
+    "trash": meme_gen.get_meme_trash,
+    "baby": meme_gen.get_meme_diapers,
+    "penbox": meme_gen.get_meme_penbox,
+}
 
 def get_message_from_command(cmd, args, player):
     if cmd != None and args != None and player == None:
         if cmd in mlb_commands:
-            if cmd == "seasonstats":
+            if cmd == "seasonstats" or cmd == "mugshot":
                 return mlb_commands[cmd](favorite_team.short_name,args)
             return mlb_commands[cmd](args)
         if cmd in other_commands:
             return other_commands[cmd](args)
+        if cmd in meme_gen_commands:
+            print("HERE 1" + cmd)
+            return meme_gen_commands[cmd](args)
     elif cmd != None and args == None and player == None:
         if cmd in mlb_commands:
             return mlb_commands[cmd](favorite_team.short_name)
@@ -103,4 +118,9 @@ def get_message_from_command(cmd, args, player):
         if cmd in hackey_commands:
             return hackey_commands[cmd][randint(0, len(hackey_commands[cmd])-1)]
     else:
-        return mlb_commands[cmd](args, player)
+        if cmd in mlb_commands:
+            return mlb_commands[cmd](args, player)
+        if cmd in meme_gen_commands:
+            print("HERE 2" + cmd)
+            mugshot = mlb.get_mugshot(args, player)
+            return meme_gen_commands[cmd](mugshot)

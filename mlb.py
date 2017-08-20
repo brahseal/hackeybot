@@ -251,4 +251,28 @@ def get_player_season_stats( team_name, player_name ):
 
     return "Sorry, i don't recognize that name, please use the name on the player uniform, or make sure he plays for the " + team_name
 
-get_inhole_batter("jays")
+def get_player_id( team_name, player_uniform_name ):
+    stats = mlb_data.get_player_stats(team_name)
+    if is_team_at_home(team_name):
+        for stat in stats['home_batting']:
+            name = stat['name'].split(",", 1)[0]
+            if player_uniform_name == name.lower():
+                return stat['id']
+        for stat in stats['home_pitching']:
+            name = stat['name'].split(",", 1)[0]
+            if player_uniform_name == name.lower():
+                return stat['id']
+    else:
+        for stat in stats['away_batting']:
+            name = stat['name'].split(",", 1)[0]
+            if player_uniform_name == name.lower():
+                return stat['id']
+        for stat in stats['away_pitching']:
+            name = stat['name'].split(",", 1)[0]
+            if player_uniform_name == name.lower():
+                return stat['id']
+
+def get_mugshot( team_name, player_uniform_name ):
+    player_id = get_player_id(team_name, player_uniform_name)
+    if player_id != None:
+        return "http://gdx.mlb.com/images/gameday/mugshots/mlb/"+player_id+".jpg"
