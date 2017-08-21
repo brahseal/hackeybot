@@ -3,7 +3,7 @@ wings = ["http://m.mlb.com/assets/images/1/3/0/229305130/cuts/morales_1280_boxjp
 
 brahseal = ["brahseal is my dad"]
 
-pearce = ["http://i.imgur.com/3DLpB7s.jpg"]
+pearce = ["http://i.imgur.com/3DLpB7s.jpg", "http://68.media.tumblr.com/003126e0121ec9ead709c2657d1d4fdb/tumblr_otrrrnmaRj1tx72cpo2_500.gif"]
 
 avs = ["based avs", "tyba", "god", "praise mr avs", "ty for disseminate", "@theavs :x"]
 
@@ -56,6 +56,8 @@ faggot = ["http://i.imgur.com/u16GIdf.png"]
 big_lenny = ["http://i.imgur.com/iEZWyt0.png"]
 
 reasons = ["http://i.imgur.com/aMsCx08.jpg"]
+
+help_me = ["https://github.com/brahseal/hackeybot/blob/master/README.md"]
 
 shapoo = ["SHAPOOOOOOO"]
 

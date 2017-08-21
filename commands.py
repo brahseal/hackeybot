@@ -66,6 +66,7 @@ hackey_commands = {
     "don": hackey.don,
     "smoak": hackey.smoak,
     "lou": leafs.lou,
+    "help": hackey.help_me,
 }
 
 other_commands = {
