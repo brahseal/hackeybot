@@ -81,6 +81,8 @@ nucks = ["WE ARE ALL CANUCKS http://i.imgur.com/wxbqCuS.png"]
 
 smoak = ["MVP"]
 
+brad = ["https://i.gyazo.com/537f19d751ddcd7e058da897777e4f31.png"]
+
 jays_gifs = ["http://68.media.tumblr.com/d64bc455e32f338c9924b00369d864b9/tumblr_ordab63tMc1tx72cpo1_500.gif", "http://68.media.tumblr.com/686933e10b781500291cf8d55d2c89b4/tumblr_nwwsvxHi2b1r37slco1_540.gif",
             "http://68.media.tumblr.com/4c076cabfaa0dbb895569e0fcaff79ec/tumblr_ntb3wzfyMf1r37slco1_500.gif",
             "http://68.media.tumblr.com/1e92874fef58ea9b69442fd66fef5c92/tumblr_nthjbhpS9g1r37slco1_400.gif",

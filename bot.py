@@ -5,8 +5,8 @@ import mlbgame
 import commands
 import smartbot
 
-bot_account = "insert_account_here"
-bot_password = "insert_password_here"
+bot_account = "hackeybot"
+bot_password = "goleafsgo"
 
 class bot(ch.RoomManager):
 
@@ -36,7 +36,7 @@ class bot(ch.RoomManager):
         if prfx:
             room.message(commands.get_message_from_command(cmd, args, player))
         print(cmd,args,player)
-rooms = ["bb6969", "bluejays69", "thepenaltybox"]
+rooms = ["nym71","bb6969", "bluejays69", "thepenaltybox"]
 username = bot_account
 password = bot_password
 
