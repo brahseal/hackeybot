@@ -54,6 +54,7 @@
     !motivation - posts a motivation image from /r/GetMotivated  
     !quote - posts a random quote from /r/quotes  
     !countdown - posts the countdown for leafs 2017 preseason  
+    !brad - brad meme
 
 **memegen:**   
 
