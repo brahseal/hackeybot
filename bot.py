@@ -6,7 +6,7 @@ import commands
 import smartbot
 
 bot_account = "hackeybot"
-bot_password = "goleafsgo"
+bot_password = ""
 
 class bot(ch.RoomManager):
 
