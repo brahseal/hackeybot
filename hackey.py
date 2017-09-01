@@ -83,6 +83,13 @@ smoak = ["MVP"]
 
 brad = ["https://i.gyazo.com/537f19d751ddcd7e058da897777e4f31.png"]
 
+annika = ["https://s-media-cache-ak0.pinimg.com/736x/a5/22/07/a522070f1409f985e248e5a2fc6a531b--cute-girls-pretty-girls.jpg",
+          "https://s-media-cache-ak0.pinimg.com/736x/a5/22/07/a522070f1409f985e248e5a2fc6a531b--cute-girls-pretty-girls.jpg",
+          "https://images-cdn.9gag.com/photo/aprP7y9_700b.jpg",
+          "https://s-media-cache-ak0.pinimg.com/originals/84/cd/e4/84cde43aaf778bee4909d4fc7f29a66f.jpg",
+          "http://i.imgur.com/F8J3XvA.jpg",
+          "http://i.imgur.com/qSkAjbu.jpg"] 
+
 jays_gifs = ["http://68.media.tumblr.com/d64bc455e32f338c9924b00369d864b9/tumblr_ordab63tMc1tx72cpo1_500.gif", "http://68.media.tumblr.com/686933e10b781500291cf8d55d2c89b4/tumblr_nwwsvxHi2b1r37slco1_540.gif",
             "http://68.media.tumblr.com/4c076cabfaa0dbb895569e0fcaff79ec/tumblr_ntb3wzfyMf1r37slco1_500.gif",
             "http://68.media.tumblr.com/1e92874fef58ea9b69442fd66fef5c92/tumblr_nthjbhpS9g1r37slco1_400.gif",

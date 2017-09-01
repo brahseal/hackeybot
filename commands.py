@@ -68,6 +68,7 @@ hackey_commands = {
     "lou": leafs.lou,
     "help": hackey.help_me,
     "brad": hackey.brad,
+    "annika": hackey.annika,
 }
 
 other_commands = {
