@@ -29,6 +29,11 @@
 
 **use without team_name parameter to get command for favorite_team**  
 
+**NHL Commands**  
+
+  !show player_first_name-player_last_name  
+
+
 **Hackey commands:**  
 
     !username - posts a random message for username in parameter (If you're not there feel free to create a pull request and add yourself or ask me and i'll do it)  

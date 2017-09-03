@@ -9,6 +9,7 @@ import random_responses
 import hackey
 import leafs
 import meme_gen
+import nhl
 
 mlb_commands = {
 
@@ -27,6 +28,10 @@ mlb_commands = {
     "seasonstats": mlb.get_player_season_stats,
     "mugshot": mlb.get_mugshot,
     "howdidwescore": mlb.get_how_we_score,
+}
+
+nhl_commands = {
+    "show": nhl.get_mugshot,
 }
 
 hackey_commands = {
@@ -107,6 +112,10 @@ def get_message_from_command(cmd, args, player):
             if cmd == "seasonstats" or cmd == "mugshot":
                 return mlb_commands[cmd](favorite_team.short_name,args)
             return mlb_commands[cmd](args)
+        if cmd in nhl_commands:
+            print("1")
+            print("args"+ args)
+            return nhl_commands[cmd](args)
         if cmd in other_commands:
             return other_commands[cmd](args)
         if cmd in meme_gen_commands:

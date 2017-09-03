@@ -1,5 +1,11 @@
 from urllib.request import urlopen
 
+def get_avi(fucker):
+    geturl = "http://46.228.199.201/mdoublee/memegen2/php/wrapper_oldmemegen.php?selectedscript=basic_getavi_0&fucker="+fucker
+    memeurl = urlopen(geturl).read()
+    string_url = str(memeurl.strip())
+    return string_url.split("'", 2)[1]
+
 def get_meme_bed(fucker):
     geturl = "http://46.228.199.201/mdoublee/memegen2/php/wrapper_oldmemegen.php?selectedscript=meme_bed_0&fucker="+fucker
     memeurl = urlopen(geturl).read()
