@@ -6,10 +6,9 @@
 
 **How to run:**  
     1. Clone or download this repository on a folder  
-    2. Access the folder from the terminal and run "pip install -r requirements.txt"  
-    3. This will install mlbgame api, praw(reddit api), tweepy(twitter api) and others  
-    4. After the install is complete create a file in the main folder called 'reddit.auth.py'
-    5. Register an app on reddit/prefs/apps and add the following code to it:
+    2. Access the folder from the terminal and run "pip install -r requirements.txt" (this will install mlbgame api, praw(reddit api), tweepy(twitter api) and others)
+    3. After the install is complete create a file in the main folder called 'reddit.auth.py'
+    4. Register an app on reddit/prefs/apps and add the following code to it:
 
     import praw
 
@@ -20,7 +19,7 @@
                          username='your-username')
 
 
-    6. run python bot.py  
+    5. run python bot.py  
 
 
 **MLB Commands List:**
@@ -73,6 +72,7 @@
     !quote - posts a random quote from /r/quotes  
     !countdown - posts the countdown for leafs 2017 preseason  
     !brad - brad meme
+    !dasit - dasit mane meme (thx natty)
 
 **memegen:**   
 
