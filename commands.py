@@ -74,6 +74,7 @@ hackey_commands = {
     "help": hackey.help_me,
     "brad": hackey.brad,
     "annika": hackey.annika,
+    "dasit": hackey.dasit,
 }
 
 other_commands = {
