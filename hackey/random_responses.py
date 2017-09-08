@@ -1,6 +1,6 @@
-import ch
 from random import randint
 import praw
+from reddit_auth import reddit
 
 we_won_responses = ["we won", "WE FUCKING WON", "http://giant.gfycat.com/FluidFrigidAfricancivet.gif", "we won", "plan the parade", "http://i.imgur.com/sZAuMyi.gif", "THE BLUE JAYS ARE THE 2017 WORLD SERIES CHAMPIONS", "WORLD SERIES CONFIRMED", "WE WON", "PLAN THE PARADE"]
 we_lost_responses = ["WE LOST", "https://cdn2.vox-cdn.com/thumbor/bXig9ueeRz29NY98jfYPjQi5WcY=/cdn0.vox-cdn.com/uploads/chorus_asset/file/6250539/Jimenez-Hutchison-Boink2.0.gif", "SELL THE TEAM", "http://4.bp.blogspot.com/-geoLTag9eT0/UfsjcNKAnbI/AAAAAAAAGd0/SCruu0o6EPQ/s1600/Melky-Error-2.gif", "This team is a joke", "WE LOST", "CANCEL PARADE", "I think i'm gonna kill myself", "brb killing myself", "kms", "This team is SHIT", "Fire Ross Atkins", "http://i.imgur.com/Q0DlMMe.gif", "black era all over again", "WE LOST", "we lost", "rip", "ugh", "I HATE THIS TEAM"]
@@ -12,12 +12,6 @@ quotes = []
 jokes = []
 
 is_waiting_response = False
-
-reddit = praw.Reddit(client_id='TrWE7X7d7K2ltA',
-                     client_secret='LxR5g38-cTDiLRxG9MLoOOxd-VE',
-                     password='123456789',
-                     user_agent='<macOS>:<1>:<0> (by /u/<hackeybotthrowaway>)',
-                     username='hackeybotthrowaway')
 
 subreddit = reddit.subreddit('Showerthoughts')
 for submission in subreddit.hot(limit=150):

@@ -1,15 +1,15 @@
 from random import randint
-import mlb
-import favorite_team
-import penny
-import doggos
-import grills
-import twitter
-import random_responses
-import hackey
-import leafs
-import meme_gen
-import nhl
+from mlb import mlb
+from mlb import favorite_team
+from hackey import penny
+from hackey import doggos
+from hackey import grills
+from hackey import random_responses
+from hackey import hackey
+from hackey import meme_gen
+from nhl import nhl
+from nhl import leafs
+from mlb import twitter
 
 mlb_commands = {
 

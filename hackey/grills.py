@@ -1,15 +1,8 @@
-import ch
 from random import randint
-import praw
+from reddit_auth import reddit
 
 brazilianbabes = ["hello"]
 qts = ["hello"]
-
-reddit = praw.Reddit(client_id='TrWE7X7d7K2ltA',
-                     client_secret='LxR5g38-cTDiLRxG9MLoOOxd-VE',
-                     password='123456789',
-                     user_agent='<macOS>:<1>:<0> (by /u/<hackeybotthrowaway>)',
-                     username='hackeybotthrowaway')
 
 subreddit = reddit.subreddit('brazilians')
 

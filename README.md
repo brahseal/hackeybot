@@ -8,7 +8,20 @@
     1. Clone or download this repository on a folder  
     2. Access the folder from the terminal and run "pip install -r requirements.txt"  
     3. This will install mlbgame api, praw(reddit api), tweepy(twitter api) and others  
-    4. After the install is complete run python bot.py  
+    4. After the install is complete create a file in the main folder called 'reddit.auth.py'
+    5. Register an app on reddit/prefs/apps and add the following code to it:
+
+    import praw
+
+    reddit = praw.Reddit(client_id='your-client-id',
+                         client_secret='your-client-secret',
+                         password='your-password',
+                         user_agent='<macOS>:<1>:<0> (by /u/<username>)',
+                         username='your-username')
+
+
+    6. run python bot.py  
+
 
 **MLB Commands List:**
 
@@ -76,5 +89,5 @@
 
 **Whats to come:**
 
-    leafs module (dank leafs memes and live game stats commands) (I'll try to make it work for other teams too)  
+    NHL module (dank leafs memes and live game stats commands) (I'll try to make it work for other teams too)  
     suggestions/bug reporting page  

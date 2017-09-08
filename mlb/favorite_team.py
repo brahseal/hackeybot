@@ -1,7 +1,8 @@
 import mlbgame
-import mlb
-import mlb_data
+from . import mlb
+from . import mlb_data
 import xml.etree.ElementTree as ET
+
 short_name = "jays"
 full_name = "BlueJays"
 

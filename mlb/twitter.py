@@ -1,9 +1,8 @@
 import tweepy
 import datetime
 import time
-import mlb
-import mlb
-import favorite_team
+from . import mlb
+from . import favorite_team
 
 auth = tweepy.OAuthHandler("v3fm3b4cVtq9Z0IILLHVp8jM2", "KqPisoNSHeH2xsXa8au2QcYx432IG060CnBDErqCYHBUkRc2re")
 auth.set_access_token("875603904670580737-CJlUHZtWF3Q1gldNh0sWpnTfExkKwkX", "UJVc3fmJxXZmONBOVRejcdw7b2TJXRJuoYf6VjmBwOLIK")

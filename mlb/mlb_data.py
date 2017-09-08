@@ -1,5 +1,5 @@
 import mlbgame
-import current_time
+from helper import current_time
 from datetime import datetime
 from apscheduler.scheduler import Scheduler
 

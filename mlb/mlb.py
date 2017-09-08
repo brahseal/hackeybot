@@ -2,10 +2,10 @@ from __future__ import print_function
 import time
 import sys, os
 import mlbgame
-import helper
+from helper import helper
 import xml.etree.ElementTree as ET
-import mlb_data
-import favorite_team
+from . import mlb_data
+from . import favorite_team
 
 def is_team_at_home( team_name ):
     game = mlb_data.get_todays_game(team_name)
