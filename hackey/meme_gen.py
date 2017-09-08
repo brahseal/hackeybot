@@ -44,6 +44,7 @@ def get_meme_pooper(fucker):
 
 def get_meme_trash(fucker):
     geturl = "http://46.228.199.201/mdoublee/memegen2/php/wrapper_oldmemegen.php?selectedscript=meme_trash_0&fucker="+fucker
+    memeurl = urlopen(geturl).read()
     string_url = str(memeurl.strip())
     return string_url.split("'", 2)[1]
 
