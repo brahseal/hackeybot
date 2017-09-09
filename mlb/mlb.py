@@ -4,8 +4,8 @@ import sys, os
 import mlbgame
 from helper import helper
 import xml.etree.ElementTree as ET
-import mlb.mlb_data
-import mlb.favorite_team
+import mlb.mlb_data as mlb_data
+import mlb.favorite_team as favorite_team
 
 def is_team_at_home( team_name ):
     game = mlb_data.get_todays_game(team_name)
