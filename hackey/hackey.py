@@ -61,7 +61,7 @@ help_me = ["https://github.com/brahseal/hackeybot/blob/master/README.md"]
 
 shapoo = ["SHAPOOOOOOO"]
 
-venn = ["http://i.imgur.com/BdkPKY6.jpg"]
+venn = ["http://i.imgur.com/LH54CGn.jpg"]
 
 consent = ["The age of consent for sexual activity in Canada is 16 years. It was raised from 14 years on May 1, 2008 by the Tackling Violent Crime Act."]
 
