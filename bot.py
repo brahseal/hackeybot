@@ -1,6 +1,6 @@
 from libs import ch
-from mlb import mlb
-from mlb import mlb_data
+import mlb.mlb
+import mlb.mlb_data
 import mlbgame
 import commands
 import smartbot
