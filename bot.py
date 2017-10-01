@@ -31,11 +31,14 @@ class bot(ch.RoomManager):
         if cmd[0] == "!":
             prfx = True
             cmd = cmd[1:]
+        elif cmd[0] == '$':
+            print("is $ sign")
+            prfx = True
         else:
             prfx = False
         if prfx:
             room.message(commands.get_message_from_command(cmd, args, player))
-        print(cmd,args,player)
+            print(cmd,args,player)
 
 rooms = ["bb6969", "bluejays69", "thepenaltybox", "testingbotfam"]
 username = bot_account

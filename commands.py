@@ -31,7 +31,10 @@ mlb_commands = {
 }
 
 nhl_commands = {
-    "show": nhl.get_mugshot,
+    "$show": nhl.get_mugshot,
+    "$score": nhl.get_game_score_for,
+    "$record": nhl.get_team_record,
+    "$sog": nhl.get_sog,
 }
 
 hackey_commands = {
@@ -114,8 +117,6 @@ def get_message_from_command(cmd, args, player):
                 return mlb_commands[cmd](favorite_team.short_name,args)
             return mlb_commands[cmd](args)
         if cmd in nhl_commands:
-            print("1")
-            print("args"+ args)
             return nhl_commands[cmd](args)
         if cmd in other_commands:
             return other_commands[cmd](args)
