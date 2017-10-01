@@ -27,11 +27,13 @@ def get_team_record(team_name):
     if is_team_at_home(team_name):
         team_wins = str(game['teams']['home']['leagueRecord']['wins'])
         team_losses = str(game['teams']['home']['leagueRecord']['losses'])
-        return team_name + " are " + team_wins + " - " + team_losses + " and fuck ties"
+        team_ot_loss = str(game['teams']['home']['leagueRecord']['ot'])
+        return team_name + " are " + team_wins + "-" + team_losses + "-" + team_ot_loss
     else:
         team_wins = str(game['teams']['away']['leagueRecord']['wins'])
         team_losses = str(game['teams']['away']['leagueRecord']['losses'])
-        return team_name + " are " + team_wins + "-" + team_losses + " and fuck ties"
+        team_ot_loss = str(game['teams']['home']['leagueRecord']['ot'])
+        return team_name + " are " + team_wins + "-" + team_losses + "-" + team_ot_loss
 
 def get_sog(team_name):
     linescore = nhl_data.get_linescore_from(team_name)
