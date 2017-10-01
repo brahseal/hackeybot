@@ -1,4 +1,3 @@
-#THX THEAVS
 import requests
 import lxml.html
 from pprint import pprint
@@ -77,7 +76,6 @@ def get_mugshot(player_name):
 	for x in range(0, len(respPlayers['data'])):
 		if respPlayers['data'][x]['playerLastName'].lower() == player_name:
 			return('https://nhl.bamcontent.com/images/headshots/current/168x168/' + str(respPlayers['data'][x]['playerId']) + '.jpg')
-
 
 	for x in range(0, len(respGoalies['data'])):
 		if respGoalies['data'][x]['playerLastName'].lower() == player_name:
