@@ -1,6 +1,9 @@
 import requests
 from . import nhl_data
 
+def stats(player_name):
+    return nhl_data.stats(player_name)
+
 def get_mugshot(player_name):
     return nhl_data.get_mugshot(player_name)
 

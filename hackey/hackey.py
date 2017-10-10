@@ -1,3 +1,4 @@
+borg = ["http://i.imgur.com/aBkx2e4l.jpg"]
 
 wings = ["http://m.mlb.com/assets/images/1/3/0/229305130/cuts/morales_1280_boxjp4ng_cjuu5be6.jpg", "http://m.mlb.com/assets/images/1/2/6/238517126/cuts/Morales1280_7hpo5j63_oxb3ew7r.jpg", "EE who?", "dank nigga"]
 

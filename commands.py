@@ -35,6 +35,7 @@ nhl_commands = {
     "$score": nhl.get_game_score_for,
     "$record": nhl.get_team_record,
     "$sog": nhl.get_sog,
+    "$stats": nhl.stats,
 }
 
 hackey_commands = {
@@ -78,6 +79,7 @@ hackey_commands = {
     "brad": hackey.brad,
     "annika": hackey.annika,
     "dasit": hackey.dasit,
+    "borg": hackey.borg,
 }
 
 other_commands = {

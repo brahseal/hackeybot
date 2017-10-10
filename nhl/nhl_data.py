@@ -61,7 +61,7 @@ teams_dictionary = {
  'knights': '54'
 }
 
-players = 'http://www.nhl.com/stats/rest/grouped/skaters/basic/season/skatersummary?cayenneExp=gameTypeId=%223%22%20and%20seasonId%3E=20142015%20and%20seasonId%3C=20162017&factCayenneExp=gamesPlayed%3E=1&sort=[{%22property%22:%22points%22,%22direction%22:%22DESC%22},{%22property%22:%22goals%22,%22direction%22:%22DESC%22},{%22property%22:%22assists%22,%22direction%22:%22DESC%22}]'
+players = 'http://www.nhl.com/stats/rest/grouped/skaters/basic/season/skatersummary?cayenneExp=gameTypeId=%222%22%20and%20seasonId%3E=20172018%20and%20seasonId%3C=20172018&factCayenneExp=gamesPlayed%3E=1&sort=[{%22property%22:%22points%22,%22direction%22:%22DESC%22},{%22property%22:%22goals%22,%22direction%22:%22DESC%22},{%22property%22:%22assists%22,%22direction%22:%22DESC%22}]'
 goalies = 'http://www.nhl.com/stats/rest/grouped/goalies/goalie_basic/season/goaliesummary?cayenneExp=gameTypeId=%222%22%20and%20playerPositionCode=%22G%22%20and%20seasonId%3E=20162017%20and%20seasonId%3C=20162017&factCayenneExp=gamesPlayed%3E=1&sort=[{%22property%22:%22wins%22,%22direction%22:%22DESC%22}]'
 
 
@@ -92,3 +92,10 @@ def get_linescore_from(team_name):
     URL = 'https://statsapi.web.nhl.com/api/v1/schedule?startDate='+date_string+'&expand=schedule.linescore&site=en_nhl&teamId='+teams_dictionary[team_name]
     resp = requests.get(URL).text;
     return json.loads(resp)['dates'][0]['games'][0]['linescore']
+
+def stats(player_name):
+
+	for x in range(0, len(respPlayers['data'])):
+	
+		if respPlayers['data'][x]['playerLastName'].lower() == player_name.lower():
+			return 'GP: ' + str(respPlayers['data'][x]['gamesPlayed']) + ' G: ' + str(respPlayers['data'][x]['goals']) + ' A: ' + str(respPlayers['data'][x]['assists'])
