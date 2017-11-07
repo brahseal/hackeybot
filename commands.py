@@ -33,7 +33,7 @@ mlb_commands = {
 nhl_commands = {
     "$show": nhl.get_mugshot,
     "$score": nhl.get_game_score_for,
-    "$record": nhl.get_team_record,
+    "$record": nhl.get_record,
     "$sog": nhl.get_sog,
     "$stats": nhl.stats,
 }

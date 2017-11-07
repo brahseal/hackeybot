@@ -40,11 +40,11 @@ teams_dictionary = {
  #11 is not an active team
  'hurricanes': '12',
  'panthers': '13',
- 'lightning': '14',
- 'capitals': '15',
- 'blackhawks': '16',
- 'redwings': '17',
- 'predators': '18',
+ 'bolts': '14',
+ 'caps': '15',
+ 'hawks': '16',
+ 'wings': '17',
+ 'preds': '18',
  'blues': '19',
  'flames': '20',
  'avs': '21',
@@ -53,9 +53,9 @@ teams_dictionary = {
  'ducks': '24',
  'stars': '25',
  'kings': '26',
- 'coyotes': '27',
+ 'yotes': '27',
  'sharks': '28',
- 'bluejackets': '29',
+ 'jackets': '29',
  'wild': '30',
  #bunch of non active teams
  'jets': '52',
@@ -67,9 +67,20 @@ goalies = 'http://www.nhl.com/stats/rest/goalies?isAggregate=false&reportType=go
 
 
 respPlayers = requests.get(players).json()
-
-
 respGoalies = requests.get(goalies).json()
+
+def get_record(team_name):
+	json = get_team_info(team_name)	
+	gp =  json['stats'][0]['splits'][0]['stat']['gamesPlayed']
+	w = json['stats'][0]['splits'][0]['stat']['wins']
+	l = json['stats'][0]['splits'][0]['stat']['losses']
+	ot = json['stats'][0]['splits'][0]['stat']['ot']
+	team = json['stats'][0]['splits'][0]['team']['name']
+	return(str(team)+': '+str(w)+'-'+str(l)+'-'+str(ot)) 	
+	
+def get_team_info(team_name):
+	url = 'https://statsapi.web.nhl.com/api/v1/teams/'+teams_dictionary[team_name]+'/stats'
+	return requests.get(url).json()
 
 
 def get_mugshot(player_name):

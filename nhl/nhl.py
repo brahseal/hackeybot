@@ -1,6 +1,9 @@
 import requests
 from . import nhl_data
 
+def get_record(team_name):
+    return nhl_data.get_record(team_name)
+
 def stats(player_name):
     return nhl_data.stats(player_name)
 
@@ -25,18 +28,6 @@ def is_team_at_home(team_name):
     home_team_id = str(game['teams']['home']['team']['id'])
     return home_team_id == nhl_data.teams_dictionary[team_name]
 
-def get_team_record(team_name):
-    game = nhl_data.get_todays_game_from(team_name)
-    if is_team_at_home(team_name):
-        team_wins = str(game['teams']['home']['leagueRecord']['wins'])
-        team_losses = str(game['teams']['home']['leagueRecord']['losses'])
-        team_ot_loss = str(game['teams']['home']['leagueRecord']['ot'])
-        return team_name + " are " + team_wins + "-" + team_losses + "-" + team_ot_loss
-    else:
-        team_wins = str(game['teams']['away']['leagueRecord']['wins'])
-        team_losses = str(game['teams']['away']['leagueRecord']['losses'])
-        team_ot_loss = str(game['teams']['home']['leagueRecord']['ot'])
-        return team_name + " are " + team_wins + "-" + team_losses + "-" + team_ot_loss
 
 def get_sog(team_name):
     linescore = nhl_data.get_linescore_from(team_name)
