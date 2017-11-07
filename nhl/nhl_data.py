@@ -58,18 +58,19 @@ teams_dictionary = {
  'bluejackets': '29',
  'wild': '30',
  #bunch of non active teams
+ 'jets': '52',
  'knights': '54'
 }
 
-players = 'http://www.nhl.com/stats/rest/grouped/skaters/basic/season/skatersummary?cayenneExp=gameTypeId=%222%22%20and%20seasonId%3E=20172018%20and%20seasonId%3C=20172018&factCayenneExp=gamesPlayed%3E=1&sort=[{%22property%22:%22points%22,%22direction%22:%22DESC%22},{%22property%22:%22goals%22,%22direction%22:%22DESC%22},{%22property%22:%22assists%22,%22direction%22:%22DESC%22}]'
-goalies = 'http://www.nhl.com/stats/rest/grouped/goalies/goalie_basic/season/goaliesummary?cayenneExp=gameTypeId=%222%22%20and%20playerPositionCode=%22G%22%20and%20seasonId%3E=20162017%20and%20seasonId%3C=20162017&factCayenneExp=gamesPlayed%3E=1&sort=[{%22property%22:%22wins%22,%22direction%22:%22DESC%22}]'
+players = 'http://www.nhl.com/stats/rest/skaters?isAggregate=false&reportType=basic&isGame=false&reportName=skatersummary&sort=[{%22property%22:%22points%22,%22direction%22:%22DESC%22},{%22property%22:%22goals%22,%22direction%22:%22DESC%22},{%22property%22:%22assists%22,%22direction%22:%22DESC%22}]&cayenneExp=gameTypeId=2%20and%20seasonId%3E=20172018%20and%20seasonId%3C=20172018'
+goalies = 'http://www.nhl.com/stats/rest/goalies?isAggregate=false&reportType=goalie_basic&isGame=false&reportName=goaliesummary&sort=[{%22property%22:%22wins%22,%22direction%22:%22DESC%22}]&cayenneExp=gameTypeId=2%20and%20seasonId%3E=20172018%20and%20seasonId%3C=20172018'
 
 
-respPlayers = requests.get(players).text
-respPlayers = json.loads(respPlayers)
+respPlayers = requests.get(players).json()
 
-respGoalies = requests.get(goalies).text
-respGoalies = json.loads(respGoalies)
+
+respGoalies = requests.get(goalies).json()
+
 
 def get_mugshot(player_name):
 
