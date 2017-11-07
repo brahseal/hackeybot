@@ -91,7 +91,7 @@ other_commands = {
         "doggo": doggos.get_doggo,
         "breeds": doggos.get_all_breeds_name,
         "fap": grills.get_qts,
-        "brazzers": grills.get_brazzers,
+        
 
         "dome": twitter.get_last_tweet_from_dome,
 
