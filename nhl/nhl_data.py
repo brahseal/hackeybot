@@ -53,7 +53,7 @@ teams_dictionary = {
  'ducks': '24',
  'stars': '25',
  'kings': '26',
- 'yotes': '27',
+ 'yotes': '53',
  'sharks': '28',
  'jackets': '29',
  'wild': '30',
@@ -68,6 +68,13 @@ goalies = 'http://www.nhl.com/stats/rest/goalies?isAggregate=false&reportType=go
 
 respPlayers = requests.get(players).json()
 respGoalies = requests.get(goalies).json()
+def get_pp_info(team_name):
+	json = get_team_info(team_name)
+	ppPercent = json['stats'][0]['splits'][0]['stat']['powerPlayPercentage']
+	ppRank = json['stats'][1]['splits'][0]['stat']['powerPlayPercentage']
+	team = json['stats'][0]['splits'][0]['team']['name']
+	return(str(team)+' powerplay: '+str(ppPercent)+'%, '+str(ppRank)+' in the league')  
+
 
 def get_record(team_name):
 	json = get_team_info(team_name)	
