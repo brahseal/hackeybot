@@ -80,6 +80,7 @@ hackey_commands = {
     "annika": hackey.annika,
     "dasit": hackey.dasit,
     "borg": hackey.borg,
+    "nitro": hackey.nitro,
 }
 
 other_commands = {

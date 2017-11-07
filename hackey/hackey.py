@@ -4,6 +4,8 @@ wings = ["http://m.mlb.com/assets/images/1/3/0/229305130/cuts/morales_1280_boxjp
 
 brahseal = ["brahseal is my dad"]
 
+nitro = ["1337 hax", "go avs go"]
+
 pearce = ["http://i.imgur.com/3DLpB7s.jpg", "http://68.media.tumblr.com/003126e0121ec9ead709c2657d1d4fdb/tumblr_otrrrnmaRj1tx72cpo2_500.gif"]
 
 avs = ["based avs", "tyba", "god", "praise mr avs", "ty for disseminate", "@theavs :x"]
