@@ -43,7 +43,13 @@
 
 **NHL Commands**  
 
-  !show player_first_name-player_last_name  
+  $show player_last_name - shows player picture
+  $score team_name - shows score of current game for given team
+  $record team_name - shows team record for given team
+  $sog team_name - shows shots on goal for current game of given team
+  $stats player_last_name - show games played, goals, assists for given player
+  $pp team_name - shows powerplay percentage and league rank for given team
+  $pk team_name - shows penalty kill percentage and league rank for given team
 
 
 **Hackey commands:**  
