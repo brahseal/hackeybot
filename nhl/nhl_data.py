@@ -68,6 +68,13 @@ goalies = 'http://www.nhl.com/stats/rest/goalies?isAggregate=false&reportType=go
 
 respPlayers = requests.get(players).json()
 respGoalies = requests.get(goalies).json()
+def get_pk_info(team_name):
+	json = get_team_info(team_name)
+	pkPercent = json['stats'][0]['splits'][0]['stat']['penaltyKillPercentage']
+	pkRank = json['stats'][1]['splits'][0]['stat']['penaltyKillPercentage']
+	team = json['stats'][0]['splits'][0]['team']['name']
+	return(str(team)+' penalty kill: '+str(pkPercent)+'%, '+str(pkRank)+' in the league') 
+
 def get_pp_info(team_name):
 	json = get_team_info(team_name)
 	ppPercent = json['stats'][0]['splits'][0]['stat']['powerPlayPercentage']
@@ -114,7 +121,10 @@ def get_linescore_from(team_name):
 
 def stats(player_name):
 
-	for x in range(0, len(respPlayers['data'])):
-	
+	for x in range(0, len(respPlayers['data'])):	
 		if respPlayers['data'][x]['playerLastName'].lower() == player_name.lower():
 			return 'GP: ' + str(respPlayers['data'][x]['gamesPlayed']) + ' G: ' + str(respPlayers['data'][x]['goals']) + ' A: ' + str(respPlayers['data'][x]['assists'])
+
+	for x in range(0, len(respGoalies['data'])):	
+		if respGoalies['data'][x]['playerLastName'].lower() == player_name.lower():
+			return 'GP:' + str(respGoalies['data'][x]['gamesPlayed']) + ' W:' + str(respGoalies['data'][x]['wins']) + ' SV%:' + str(respGoalies['data'][x]['savePctg'])

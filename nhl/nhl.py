@@ -1,8 +1,11 @@
 import requests
 from . import nhl_data
 
+def get_pk(team_name):
+    return nhl_data.get_pk_info(team_name)
+ 
 def get_pp(team_name):
-     return nhl_data.get_pp_info(team_name)
+    return nhl_data.get_pp_info(team_name)
 
 def get_record(team_name):
     return nhl_data.get_record(team_name)

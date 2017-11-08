@@ -37,6 +37,7 @@ nhl_commands = {
     "$sog": nhl.get_sog,
     "$stats": nhl.stats,
     "$pp": nhl.get_pp,
+    "$pk": nhl.get_pk,
 }
 
 hackey_commands = {
