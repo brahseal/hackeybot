@@ -83,6 +83,8 @@ hackey_commands = {
     "dasit": hackey.dasit,
     "borg": hackey.borg,
     "nitro": hackey.nitro,
+    "wew": hackey.wew,
+    "pude": hackey.pude,
 }
 
 other_commands = {

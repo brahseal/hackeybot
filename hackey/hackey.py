@@ -1,3 +1,7 @@
+pude = ["go jets go", "Finland master race"]
+
+wew = ["WEW", "W E W"]
+
 borg = ["http://i.imgur.com/aBkx2e4l.jpg"]
 
 wings = ["http://m.mlb.com/assets/images/1/3/0/229305130/cuts/morales_1280_boxjp4ng_cjuu5be6.jpg", "http://m.mlb.com/assets/images/1/2/6/238517126/cuts/Morales1280_7hpo5j63_oxb3ew7r.jpg", "EE who?", "dank nigga"]
@@ -37,8 +41,6 @@ hashi = ["fuck the bruins", "bruins fan *pukes*"]
 prop = ["based prop", "#ComeBackProp", "#CanadaNeedsYou", "fuck the usa"]
 
 zezi = ["zezi", "zezi is based", "<3", "leafs bro"]
-
-pude = ["marijuana enthusiast", "finland bro"]
 
 coachtim = ["his dad knows penny :o"]
 
