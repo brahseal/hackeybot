@@ -79,6 +79,9 @@
     !countdown - posts the countdown for leafs 2017 preseason  
     !brad - brad meme
     !dasit - dasit mane meme (thx natty)
+    !cock - babcock memes
+    !no - no meme
+
 
 **memegen:**   
 
