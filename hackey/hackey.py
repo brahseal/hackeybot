@@ -1,4 +1,4 @@
-cock = ["http://i.imgur.com/c9rxwFu.jpg", "http://assets.sbnation.com/assets/2632655/rollinwithdahomies.gif", "http://i.imgur.com/GdRt52D.gif"]
+cock = ["https://i.gyazo.com/9885f5c77c569980e64aac49c0162c77.png", "http://media.giphy.com/media/10pTObWLhekvHW/giphy.gif", "http://i.imgur.com/q8yfiSk.jpg", "http://i.imgur.com/c9rxwFu.jpg", "http://assets.sbnation.com/assets/2632655/rollinwithdahomies.gif", "http://i.imgur.com/GdRt52D.gif"]
 
 pude = ["go jets go", "Finland master race"]
 
