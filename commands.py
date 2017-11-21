@@ -85,6 +85,7 @@ hackey_commands = {
     "nitro": hackey.nitro,
     "wew": hackey.wew,
     "pude": hackey.pude,
+    "cock": hackey.cock,
 }
 
 other_commands = {

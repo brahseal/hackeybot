@@ -1,3 +1,5 @@
+cock = ["http://i.imgur.com/c9rxwFu.jpg", "http://assets.sbnation.com/assets/2632655/rollinwithdahomies.gif", "http://i.imgur.com/GdRt52D.gif"]
+
 pude = ["go jets go", "Finland master race"]
 
 wew = ["WEW", "W E W"]
