@@ -71,6 +71,13 @@ goalies = 'http://www.nhl.com/stats/rest/goalies?isAggregate=false&reportType=go
 
 respPlayers = requests.get(players).json()
 respGoalies = requests.get(goalies).json()
+
+def get_ppg_info(team_name):
+	json = get_team_info(team_name)
+	ppg = json['stats'][0]['splits'][0]['stat']['powerPlayGoals']
+	team = json['stats'][0]['splits'][0]['team']['name']
+	return(str(team)+' have '+str(round(ppg))+' power play goals.')
+
 def get_pk_info(team_name):
 	json = get_team_info(team_name)
 	pkPercent = json['stats'][0]['splits'][0]['stat']['penaltyKillPercentage']
