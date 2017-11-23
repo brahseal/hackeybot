@@ -50,6 +50,7 @@
     $stats player_last_name - show games played, goals, assists for given player
     $pp team_name - shows powerplay percentage and league rank for given team
     $pk team_name - shows penalty kill percentage and league rank for given team
+    $ppg team_name - number of power play goals scored for given team
 
 
 **Hackey commands:**  
