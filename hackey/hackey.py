@@ -36,6 +36,10 @@ gibbys = ["http://zippy.gfycat.com/InconsequentialIncompleteIndianrhinoceros.gif
 
 deez = ["DEEEEEEEEZ", "footy bro", "the only american footy fan", "dank musical taste"]
 
+brick = ["https://cdn.shopify.com/s/files/1/0565/7801/files/Slide1_aa47da28-c20d-4ce3-a7cf-cac65864f0a7_2048x2048.jpg", "gay twink boy", "hopp schwiiz!", "https://cdn.shopify.com/s/files/1/0565/7801/files/SAINT_IN_SATIN_2_2048x2048.jpg", 
+       "http://static1.squarespace.com/static/561fb480e4b036909d4d3cae/561fb588e4b05c4e86e03420/5631fd4de4b05f0aa09b04ea/1466749334942/Mark-Streit-von-Fotograf-Remo-Neuhaus-aus-Bern-1.jpg", "hold me daddy", "go back to swissland", 
+         "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/100%25_happy_%28195838036%29.jpg/800px-100%25_happy_%28195838036%29.jpg", "https://upload.wikimedia.org/wikipedia/commons/c/cd/Gay_Couple_Savv_and_Pueppi_02.jpg"]
+
 swishhhhh = ["SWISHHHHH", "I wish my name was jaysbothhhhh", "5h master race", "dank nigga"]
 
 pond = ["streams at work", "dank af", "dank tv show critic"]
