@@ -90,6 +90,7 @@ hackey_commands = {
     "no": hackey.no,
     "1au": hackey.oneau,
     "fish": hackey.fish,
+    "brick": hackey.brick,
 }
 
 other_commands = {
