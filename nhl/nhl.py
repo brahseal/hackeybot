@@ -1,6 +1,9 @@
 import requests
 from . import nhl_data
 
+def get_standings(division):
+    return nhl_data.get_standings_info(division)
+
 def get_ppg(team_name):
     return nhl_data.get_ppg_info(team_name)
 
@@ -20,7 +23,7 @@ def get_mugshot(player_name):
     return nhl_data.get_mugshot(player_name)
 
 def get_game_score_for(team_name):
-    game = nhl_data.get_todays_game_from(team_name)
+    game = nhl_data.get_todays_game_from(team_name.lower())
 
     away_team = game['teams']['away']['team']['name']
     away_team_score = str(game['teams']['away']['score'])

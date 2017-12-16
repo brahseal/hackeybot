@@ -39,6 +39,7 @@ nhl_commands = {
     "$pp": nhl.get_pp,
     "$pk": nhl.get_pk,
     "$ppg": nhl.get_ppg,
+    "$standings": nhl.get_standings,
 }
 
 hackey_commands = {
@@ -90,6 +91,8 @@ hackey_commands = {
     "no": hackey.no,
     "1au": hackey.oneau,
     "fish": hackey.fish,
+    "robbie": hackey.robbie,
+    "ron": hackey.ron,
 }
 
 other_commands = {

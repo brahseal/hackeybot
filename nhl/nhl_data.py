@@ -26,6 +26,13 @@ def update_time():
 
 sched.add_interval_job(update_time, hours=6)
 
+divisions_dictionary = {
+ 'metro': '0',
+ 'atlantic': '1',
+ 'central': '2',
+ 'pacific': '3'
+}
+
 teams_dictionary = {
  'devils': '01',
  'islanders': '02',
@@ -71,6 +78,19 @@ goalies = 'http://www.nhl.com/stats/rest/goalies?isAggregate=false&reportType=go
 
 respPlayers = requests.get(players).json()
 respGoalies = requests.get(goalies).json()
+
+def get_standings_info(division):
+	output = ''
+	json = requests.get('https://statsapi.web.nhl.com/api/v1/standings?season=20172018').json()
+	divisionNum = divisions_dictionary[division]
+	listOfTeams = json['records'][int(divisionNum)]['teamRecords']
+	for x in range(0, len(listOfTeams)):
+		output += (str(x+ 1) + ': ')
+		output += str(listOfTeams[x]['team']['name'])
+		output += ' '  
+		
+	return output
+	
 
 def get_ppg_info(team_name):
 	json = get_team_info(team_name)
