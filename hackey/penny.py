@@ -1,7 +1,7 @@
 from random import randint
 import datetime
 
-pennypics = ["http://i.imgur.com/c4dyhjd.png", "http://i.imgur.com/8vtqKdo.png",
+pennypics = ["http://scontent-yyz1-1.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/24838559_1688008284596256_8775064742067699712_n.jpg", "http://i.imgur.com/c4dyhjd.png", "http://i.imgur.com/8vtqKdo.png",
  "http://i.imgur.com/xOIHJ6L.png", "http://i.imgur.com/JDTpgkB.png", "http://i.imgur.com/xIlgI1H.png"
  "http://i.imgur.com/x1TcxEn.png", "http://i.imgur.com/X8MFZAv.png", "http://i.imgur.com/9PO45fe.png",
  "http://i.imgur.com/zePRj9e.png", "http://i.imgur.com/F7wXD7i.png", "http://i.imgur.com/I9MymnA.png",
