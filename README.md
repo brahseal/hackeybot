@@ -84,7 +84,7 @@
     !cock - babcock memes
     !no - no meme
     !define word - posts a random definition from urban dictionary for given word
-    !weather city_name - posts the current weather for given city name
+    !howistheweather city_name - posts the current weather for given city name
 
 **memegen:**   
 

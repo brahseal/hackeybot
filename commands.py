@@ -114,7 +114,7 @@ other_commands = {
         "countdown": leafs.get_countdown,
         "definition": urbandict.get_random_definition_from,
         "define": urbandict.get_random_definition_from,
-        "weather": weather_lookup.get_weather_for_city,
+        "howistheweather": weather_lookup.get_weather_for_city,
 }
 
 meme_gen_commands = {
