@@ -7,6 +7,7 @@ from hackey import grills
 from hackey import random_responses
 from hackey import hackey
 from hackey import meme_gen
+from hackey import urbandict
 from nhl import nhl
 from nhl import leafs
 from mlb import twitter
@@ -110,6 +111,8 @@ other_commands = {
         "motivation": random_responses.get_motivation_image,
         "quote": random_responses.get_quote,
         "countdown": leafs.get_countdown,
+        "definition": urbandict.get_random_definition_from,
+        "define": urbandict.get_random_definition_from,
 }
 
 meme_gen_commands = {

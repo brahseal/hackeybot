@@ -83,6 +83,7 @@
     !dasit - dasit mane meme (thx natty)
     !cock - babcock memes
     !no - no meme
+    !define word - posts a random definition from urban dictionary for given word
 
 
 **memegen:**   
