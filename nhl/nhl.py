@@ -54,7 +54,6 @@ def get_sog(team_name):
 
 def get_next_game_for(team_name):
     from . import current_date
-    print('Called NEXTGAME function')
     schedule = nhl_data.get_schedule_for_next_5_days(team_name)
     next_game = schedule['dates'][0]['games'][0]
     home_team_id = str(next_game['teams']['home']['team']['id'])
@@ -64,7 +63,7 @@ def get_next_game_for(team_name):
     else:
         opponent = next_game['teams']['home']['team']
 
-    when = next_game['gameDate'][:10]
+    when = schedule['dates'][0]['date']
     when_weekday = current_date.get_weekday_from(when)
     venue = next_game['venue']['name']
 
