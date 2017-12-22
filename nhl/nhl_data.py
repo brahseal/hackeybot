@@ -158,3 +158,11 @@ def stats(player_name):
 	for x in range(0, len(respGoalies['data'])):	
 		if respGoalies['data'][x]['playerLastName'].lower() == player_name.lower():
 			return 'GP:' + str(respGoalies['data'][x]['gamesPlayed']) + ' W:' + str(respGoalies['data'][x]['wins']) + ' SV%:' + str(respGoalies['data'][x]['savePctg'])
+
+def get_schedule_for_next_5_days(team_name):
+    tomorrow = current_date.get_tomorrow()
+    five_days_from_now = current_date.get_five_days_from_now()
+
+    URL = 'https://statsapi.web.nhl.com/api/v1/schedule?startDate=' + year + '-' + tomorrow + '&endDate='+year+'-'+five_days_from_now+'&expand=schedule.teams,schedule.broadcasts,schedule.game.content.media.epg&leaderCategories=&site=en_nhl&teamId='+teams_dictionary[team_name]
+    resp = requests.get(URL).text;
+    return json.loads(resp)

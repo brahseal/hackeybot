@@ -1,4 +1,6 @@
 import time
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
 
 def get_year():
     return time.strftime("%Y")
@@ -17,6 +19,17 @@ def get_day():
     day = str(day)
     return day
 
+def get_tomorrow():
+    today = datetime.now().strftime('%m-%d')
+    tomorrow = datetime.now()+ relativedelta(days=1)
+    return str(tomorrow.strftime('%m-%d'))
+
+def get_five_days_from_now():
+    today = datetime.now().strftime('%m-%d')
+    five_days_from_now = datetime.now()+ relativedelta(days=5)
+    return str(five_days_from_now.strftime('%m-%d'))
+
+
 def get_hour():
     return time.strftime("%H")
 
@@ -27,3 +40,7 @@ def convert_str(s):
         #Try float.
         ret = float(s)
     return ret
+
+def get_weekday_from(date):
+    weekday = datetime.strptime(date, '%Y-%m-%d').strftime('%A')
+    return weekday

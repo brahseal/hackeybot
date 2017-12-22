@@ -40,6 +40,7 @@ nhl_commands = {
     "$pk": nhl.get_pk,
     "$ppg": nhl.get_ppg,
     "$standings": nhl.get_standings,
+    "$nextgame": nhl.get_next_game_for,
 }
 
 hackey_commands = {
