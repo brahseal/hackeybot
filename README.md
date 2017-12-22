@@ -7,7 +7,7 @@
 **How to run:**  
     1. Clone or download this repository on a folder  
     2. Access the folder from the terminal and run "pip install -r requirements.txt" (this will install mlbgame api, praw(reddit api), tweepy(twitter api) and others)  
-    3. After the install is complete create a file in the main folder called 'reddit.auth.py'
+    3. After the install is complete create a file in the main folder called 'reddit_auth.py'
     4. Register an app on reddit/prefs/apps and add the following code to it:
 
     import praw
@@ -51,6 +51,7 @@
     $pp team_name - shows powerplay percentage and league rank for given team
     $pk team_name - shows penalty kill percentage and league rank for given team
     $ppg team_name - number of power play goals scored for given team
+    $nextgame team_name - shows the date of the next game for given team name
 
 
 **Hackey commands:**  

@@ -100,21 +100,18 @@ other_commands = {
         "penny": penny.get_random_pic,
         "pennyage": penny.get_penny_age,
         "pennydance": penny.get_penny_dance,
-
         "doggo": doggos.get_doggo,
         "breeds": doggos.get_all_breeds_name,
         "fap": grills.get_qts,
-        
-
         "dome": twitter.get_last_tweet_from_dome,
-
         "tip": random_responses.get_shitty_LPT,
         "thought": random_responses.get_thought,
         "joke": random_responses.get_joke,
         "motivation": random_responses.get_motivation_image,
         "quote": random_responses.get_quote,
         "countdown": leafs.get_countdown,
-    }
+}
+
 meme_gen_commands = {
     "go2bed": meme_gen.get_meme_bed,
     "hang": meme_gen.get_meme_hang,
@@ -137,7 +134,6 @@ def get_message_from_command(cmd, args, player):
         if cmd in other_commands:
             return other_commands[cmd](args)
         if cmd in meme_gen_commands:
-            print("HERE 1" + cmd)
             return meme_gen_commands[cmd](args)
     elif cmd != None and args == None and player == None:
         if cmd in mlb_commands:
@@ -152,6 +148,5 @@ def get_message_from_command(cmd, args, player):
         if cmd in mlb_commands:
             return mlb_commands[cmd](args, player)
         if cmd in meme_gen_commands:
-            print("HERE 2" + cmd)
             mugshot = mlb.get_mugshot(args, player)
             return meme_gen_commands[cmd](mugshot)
