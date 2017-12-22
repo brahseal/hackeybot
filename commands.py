@@ -8,6 +8,7 @@ from hackey import random_responses
 from hackey import hackey
 from hackey import meme_gen
 from hackey import urbandict
+from hackey import weather_lookup
 from nhl import nhl
 from nhl import leafs
 from mlb import twitter
@@ -113,6 +114,7 @@ other_commands = {
         "countdown": leafs.get_countdown,
         "definition": urbandict.get_random_definition_from,
         "define": urbandict.get_random_definition_from,
+        "weather": weather_lookup.get_weather_for_city,
 }
 
 meme_gen_commands = {
