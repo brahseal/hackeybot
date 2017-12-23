@@ -12,6 +12,7 @@ from hackey import weather_lookup
 from nhl import nhl
 from nhl import leafs
 from mlb import twitter
+from nba import nba_data
 
 mlb_commands = {
 
@@ -43,6 +44,10 @@ nhl_commands = {
     "$ppg": nhl.get_ppg,
     "$standings": nhl.get_standings,
     "$nextgame": nhl.get_next_game_for,
+}
+
+nba_commands = {
+    '#score': nba_data.get_score_from_team,
 }
 
 hackey_commands = {
@@ -140,6 +145,8 @@ def get_message_from_command(cmd, args, player):
             return other_commands[cmd](args)
         if cmd in meme_gen_commands:
             return meme_gen_commands[cmd](args)
+        if cmd in nba_commands:
+            return nba_commands[cmd](args)
     elif cmd != None and args == None and player == None:
         if cmd in mlb_commands:
             return mlb_commands[cmd](favorite_team.short_name)
