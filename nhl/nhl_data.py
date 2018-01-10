@@ -28,6 +28,7 @@ sched.add_interval_job(update_time, hours=6)
 
 divisions_dictionary = {
  'metro': '0',
+ 'metropolitan': '0',
  'atlantic': '1',
  'central': '2',
  'pacific': '3'
@@ -39,6 +40,7 @@ teams_dictionary = {
  'rangers': '03',
  'rags': '03',
  'flyers': '04',
+ 'pens': '05',
  'penguins': '05',
  'bruins': '06',
  'sabres': '07',
@@ -46,7 +48,9 @@ teams_dictionary = {
  'sens': '09',
  'leafs': '10',
  #11 is not an active team
+ 'canes': '12',
  'hurricanes': '12',
+ 'cats': '13',
  'panthers': '13',
  'bolts': '14',
  'caps': '15',
