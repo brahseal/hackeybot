@@ -103,6 +103,8 @@ hackey_commands = {
     "ron": hackey.ron,
     "anon": hackey.anon,
     "garry": hackey.garry,
+    "metsfan": hackey.metsfan,
+    "king": hackey.king
 }
 
 other_commands = {

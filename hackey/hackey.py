@@ -98,6 +98,10 @@ sens = ["sens warming up for the 2017 season http://www.sensplex.ca/sites/defaul
 
 nucks = ["WE ARE ALL CANUCKS http://i.imgur.com/wxbqCuS.png"]
 
+metsfan = ["http://i.imgur.com/kNIv7cR.jpg"]
+
+king = "where the hoes at"
+
 smoak = ["MVP"]
 
 dasit = ["http://i0.kym-cdn.com/photos/images/newsfeed/000/668/455/239.jpg"]
