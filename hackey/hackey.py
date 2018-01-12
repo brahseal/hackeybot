@@ -100,7 +100,7 @@ nucks = ["WE ARE ALL CANUCKS http://i.imgur.com/wxbqCuS.png"]
 
 metsfan = ["http://i.imgur.com/kNIv7cR.jpg"]
 
-king = "where the hoes at"
+king = ["where the hoes at"]
 
 smoak = ["MVP"]
 
