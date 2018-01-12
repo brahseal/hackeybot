@@ -1,3 +1,5 @@
+garry = ["y e a r o f t h e y a k"]
+
 ron = ["https://postmediaprovince2.files.wordpress.com/2011/09/ronmaclean.jpg"]
 
 robbie = ["daddy", "harder daddy"]
@@ -56,7 +58,7 @@ zezi = ["zezi", "zezi is based", "<3", "leafs bro"]
 
 coachtim = ["his dad knows penny :o"]
 
-kawa = ["I AM JAPANEEEEESEEEEEE", "Bring back Kawa" "https://img.buzzfeed.com/buzzfeed-static/static/2015-10/6/16/imagebuzz/webdr13/anigif_optimized-16449-1444162636-6.gif",
+kawa = ["I AM JAPANEEEEESEEEEEE", "Bring back Kawa https://img.buzzfeed.com/buzzfeed-static/static/2015-10/6/16/imagebuzz/webdr13/anigif_optimized-16449-1444162636-6.gif",
         "http://media.giphy.com/media/VEMvkcsQRkPJu/giphy.gif", "http://mlbfancave.mlb.com/assets/images/custom/kawasakidance_149mg9so.gif", "http://assets.sbnation.com/assets/2902327/kawasakidance.gif",
         "http://mlb.mlb.com/images/9/4/4/132070944/062115_tor_kawasaki_dance_med_dwjlruja.gif", "http://media.tenor.com/images/0a004a7ed65b57c8638a9f00cc836314/tenor.gif", "http://mlb.mlb.com/images/0/9/4/131866094/062015_tor_kawasaki_mime_dance_med_k76sv2my.gif",
         "http://mlb.mlb.com/images/7/8/8/147843788/090615_tor_kawasaki_muscle_med_bnxxrqop.gif", "are u from?", "http://i.imgur.com/S5z8HrF.gif",
@@ -88,7 +90,7 @@ ninja = ["http://i.imgur.com/nVSrV33.jpg, http://i.imgur.com/hrPpbox.png", "http
 
 moose = ["based moose", "http://www.cbc.ca/natureofthings/content/images/episodes/moose_infographic.jpg"]
 
-don = ["http://i.imgur.com/0QMnE4s.png"]
+don = ["http://i.imgur.com/0QMnE4s.png", "http://i.imgur.com/kNWzISx.png"]
 
 jay = ["http://i.imgur.com/P9z9v0E.jpg, http://i.imgur.com/edFUR1l.jpg"]
 
@@ -101,6 +103,8 @@ smoak = ["MVP"]
 dasit = ["http://i0.kym-cdn.com/photos/images/newsfeed/000/668/455/239.jpg"]
 
 brad = ["https://i.gyazo.com/537f19d751ddcd7e058da897777e4f31.png"]
+
+anon = ["cat anon is best anon"]
 
 annika = ["https://s-media-cache-ak0.pinimg.com/736x/a5/22/07/a522070f1409f985e248e5a2fc6a531b--cute-girls-pretty-girls.jpg",
           "https://s-media-cache-ak0.pinimg.com/736x/a5/22/07/a522070f1409f985e248e5a2fc6a531b--cute-girls-pretty-girls.jpg",

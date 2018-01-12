@@ -101,6 +101,8 @@ hackey_commands = {
     "fish": hackey.fish,
     "robbie": hackey.robbie,
     "ron": hackey.ron,
+    "anon": hackey.anon,
+    "garry": hackey.garry,
 }
 
 other_commands = {
@@ -118,7 +120,7 @@ other_commands = {
         "quote": random_responses.get_quote,
         "countdown": leafs.get_countdown,
         "definition": urbandict.get_random_definition_from,
-        "define": urbandict.get_random_definition_from,
+       # "define": urbandict.get_random_definition_from,
         "howistheweather": weather_lookup.get_weather_for_city,
 }
 
