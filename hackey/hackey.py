@@ -72,7 +72,7 @@ ross = ["Stay hydrated", "Shit but what you gonna do?", "Shit gm", "Shapiro pupp
 
 faggot = ["http://i.imgur.com/u16GIdf.png"]
 
-big_lenny = ["http://i.imgur.com/iEZWyt0.png"]
+big_lenny = ["http://i.imgur.com/iEZWyt0.png", "http://i.ytimg.com/vi/P4Uq99Q8uPk/maxresdefault.jpg", "http://i.ytimg.com/vi/QQf2Ac_A1-k/maxresdefault.jpg", "http://d2g8igdw686xgo.cloudfront.net/19692100_1492371710.9479.jpg"]
 
 reasons = ["http://i.imgur.com/aMsCx08.jpg"]
 
