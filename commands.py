@@ -44,6 +44,7 @@ nhl_commands = {
     "$ppg": nhl.get_ppg,
     "$standings": nhl.get_standings,
     "$nextgame": nhl.get_next_game_for,
+    "$intermissionoveryet": nhl.get_remaining_intermission_time,
 }
 
 nba_commands = {
@@ -138,12 +139,14 @@ meme_gen_commands = {
 }
 
 def get_message_from_command(cmd, args, player):
+    print("Will try to call msg from command:" + cmd)
     if cmd != None and args != None and player == None:
         if cmd in mlb_commands:
             if cmd == "seasonstats" or cmd == "mugshot":
                 return mlb_commands[cmd](favorite_team.short_name,args)
             return mlb_commands[cmd](args)
         if cmd in nhl_commands:
+            print("1")
             return nhl_commands[cmd](args)
         if cmd in other_commands:
             return other_commands[cmd](args)

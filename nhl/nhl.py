@@ -9,7 +9,7 @@ def get_ppg(team_name):
 
 def get_pk(team_name):
     return nhl_data.get_pk_info(team_name)
- 
+
 def get_pp(team_name):
     return nhl_data.get_pp_info(team_name)
 
@@ -68,3 +68,17 @@ def get_next_game_for(team_name):
     venue = next_game['venue']['name']
 
     return team_name + ' are playing against the ' + opponent['teamName'] + ' on ' + when_weekday + ' at ' + venue
+
+def get_remaining_intermission_time(team_name):
+    live_data = nhl_data.get_live_data(team_name)
+    linescore = live_data["linescore"]
+    intermission_info = linescore["intermissionInfo"]
+    is_intermission = intermission_info["inIntermission"]
+    if not is_intermission:
+        return "The " + team_name + " game is not in intermission"
+    else :
+        time_left = intermission_info["intermissionTimeRemaining"]
+        minutes = time_left%3600/60
+        return "There is " + minutes + "mins left in intermission"
+
+print(get_remaining_intermission_time('nucks'))

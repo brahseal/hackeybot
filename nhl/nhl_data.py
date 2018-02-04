@@ -91,10 +91,10 @@ def get_standings_info(division):
 	for x in range(0, len(listOfTeams)):
 		output += (str(x+ 1) + ': ')
 		output += str(listOfTeams[x]['team']['name'])
-		output += ' '  
-		
+		output += ' '
+
 	return output
-	
+
 
 def get_ppg_info(team_name):
 	json = get_team_info(team_name)
@@ -107,25 +107,25 @@ def get_pk_info(team_name):
 	pkPercent = json['stats'][0]['splits'][0]['stat']['penaltyKillPercentage']
 	pkRank = json['stats'][1]['splits'][0]['stat']['penaltyKillPercentage']
 	team = json['stats'][0]['splits'][0]['team']['name']
-	return(str(team)+' penalty kill: '+str(pkPercent)+'%, '+str(pkRank)+' in the league') 
+	return(str(team)+' penalty kill: '+str(pkPercent)+'%, '+str(pkRank)+' in the league')
 
 def get_pp_info(team_name):
 	json = get_team_info(team_name)
 	ppPercent = json['stats'][0]['splits'][0]['stat']['powerPlayPercentage']
 	ppRank = json['stats'][1]['splits'][0]['stat']['powerPlayPercentage']
 	team = json['stats'][0]['splits'][0]['team']['name']
-	return(str(team)+' powerplay: '+str(ppPercent)+'%, '+str(ppRank)+' in the league')  
+	return(str(team)+' powerplay: '+str(ppPercent)+'%, '+str(ppRank)+' in the league')
 
 
 def get_record(team_name):
-	json = get_team_info(team_name)	
+	json = get_team_info(team_name)
 	gp =  json['stats'][0]['splits'][0]['stat']['gamesPlayed']
 	w = json['stats'][0]['splits'][0]['stat']['wins']
 	l = json['stats'][0]['splits'][0]['stat']['losses']
 	ot = json['stats'][0]['splits'][0]['stat']['ot']
 	team = json['stats'][0]['splits'][0]['team']['name']
-	return(str(team)+': '+str(w)+'-'+str(l)+'-'+str(ot)) 	
-	
+	return(str(team)+': '+str(w)+'-'+str(l)+'-'+str(ot))
+
 def get_team_info(team_name):
 	url = 'https://statsapi.web.nhl.com/api/v1/teams/'+teams_dictionary[team_name]+'/stats'
 	return requests.get(url).json()
@@ -142,24 +142,31 @@ def get_mugshot(player_name):
 			return('https://nhl.bamcontent.com/images/headshots/current/168x168/' + str(respGoalies['data'][x]['playerId']) + '.jpg')
 
 def get_todays_game_from(team_name):
-	date_string = year + '-' + '09' + '-' + '30'
+	date_string = year + '-' + month + '-' + day
 	URL = 'https://statsapi.web.nhl.com/api/v1/schedule?startDate='+date_string+'&site=en_nhl&teamId='+teams_dictionary[team_name]
 	resp = requests.get(URL).text
 	return json.loads(resp)['dates'][0]['games'][0]
 
+def get_live_data(team_name):
+    game_json = get_todays_game_from(team_name)
+    live_feed_url = game_json["link"]
+    URL =  "https://statsapi.web.nhl.com" + live_feed_url
+    resp = requests.get(URL).text
+    return json.loads(resp)['liveData']
+
 def get_linescore_from(team_name):
-    date_string = year + '-' + '09' + '-' + '30'
+    date_string = year + '-' + month + '-' + day
     URL = 'https://statsapi.web.nhl.com/api/v1/schedule?startDate='+date_string+'&expand=schedule.linescore&site=en_nhl&teamId='+teams_dictionary[team_name]
     resp = requests.get(URL).text;
     return json.loads(resp)['dates'][0]['games'][0]['linescore']
 
 def stats(player_name):
 
-	for x in range(0, len(respPlayers['data'])):	
+	for x in range(0, len(respPlayers['data'])):
 		if respPlayers['data'][x]['playerLastName'].lower() == player_name.lower():
 			return 'GP: ' + str(respPlayers['data'][x]['gamesPlayed']) + ' G: ' + str(respPlayers['data'][x]['goals']) + ' A: ' + str(respPlayers['data'][x]['assists'])
 
-	for x in range(0, len(respGoalies['data'])):	
+	for x in range(0, len(respGoalies['data'])):
 		if respGoalies['data'][x]['playerLastName'].lower() == player_name.lower():
 			return 'GP:' + str(respGoalies['data'][x]['gamesPlayed']) + ' W:' + str(respGoalies['data'][x]['wins']) + ' SV%:' + str(respGoalies['data'][x]['savePctg'])
 

@@ -52,7 +52,7 @@
     $pk team_name - shows penalty kill percentage and league rank for given team
     $ppg team_name - number of power play goals scored for given team
     $nextgame team_name - shows the date of the next game for given team name
-
+    $intermissionoveryet - displays how many minutes left in intermission
 
 **Hackey commands:**  
 
