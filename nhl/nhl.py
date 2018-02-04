@@ -79,6 +79,4 @@ def get_remaining_intermission_time(team_name):
     else :
         time_left = intermission_info["intermissionTimeRemaining"]
         minutes = time_left%3600/60
-        return "There is " + minutes + "mins left in intermission"
-
-print(get_remaining_intermission_time('nucks'))
+        return "There is " + str(int(minutes)) + " minutes left in " team_name + " game intermission"
