@@ -45,6 +45,12 @@ nhl_commands = {
     "$standings": nhl.get_standings,
     "$nextgame": nhl.get_next_game_for,
     "$intermissionoveryet": nhl.get_remaining_intermission_time,
+    "$timeonice": nhl.get_time_on_ice,
+    "$assists": nhl.get_assists,
+    "$goals": nhl.get_goals,
+    "$hits": nhl.get_hits,
+    "$fw": nhl.get_fw,
+    "$+/-": nhl.get_plus_minus,
 }
 
 nba_commands = {
@@ -164,6 +170,8 @@ def get_message_from_command(cmd, args, player):
         if cmd in hackey_commands:
             return hackey_commands[cmd][randint(0, len(hackey_commands[cmd])-1)]
     else:
+        if cmd in nhl_commands:
+            return nhl_commands[cmd](args, player)
         if cmd in mlb_commands:
             return mlb_commands[cmd](args, player)
         if cmd in meme_gen_commands:

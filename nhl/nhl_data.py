@@ -5,6 +5,7 @@ from sys import exit
 import json
 import csv
 from . import current_date
+# import current_date
 from datetime import datetime
 from apscheduler.scheduler import Scheduler
 
@@ -153,6 +154,13 @@ def get_live_data(team_name):
     URL =  "https://statsapi.web.nhl.com" + live_feed_url
     resp = requests.get(URL).text
     return json.loads(resp)['liveData']
+
+def get_live_boxscore(team_name):
+    game_json = get_todays_game_from(team_name)
+    live_feed_url = game_json["link"]
+    URL =  "https://statsapi.web.nhl.com" + live_feed_url
+    resp = requests.get(URL).text
+    return json.loads(resp)['liveData']['boxscore']
 
 def get_linescore_from(team_name):
     date_string = year + '-' + month + '-' + day

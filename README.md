@@ -53,6 +53,10 @@
     $ppg team_name - number of power play goals scored for given team
     $nextgame team_name - shows the date of the next game for given team name
     $intermissionoveryet - displays how many minutes left in intermission
+    $assists team_name, player_name - shows how many assists the player has in that day so far
+    $goals team_name, player_name - shows how many goals the player has in that day so far 
+    $hits team_name, player_name - shows how many hits the player has in that day so far
+    "$+/-" team_name, player_name - shows plus minus stat for given player on that day
 
 **Hackey commands:**  
 
