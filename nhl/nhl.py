@@ -20,9 +20,13 @@ def get_record(team_name):
 def stats(player_name):
     return nhl_data.stats(player_name)
 
-def get_mugshot(player_name):
-    return nhl_data.get_mugshot(player_name)
-
+def get_mugshot(player_name, arg2=None):
+    if arg2 != None:
+        print('2 args')
+        return nhl_data.get_mugshot2(player_name, arg2)
+    else:
+        print('1 arg')
+        return nhl_data.get_mugshot(player_name)
 def get_game_score_for(team_name):
     game = nhl_data.get_todays_game_from(team_name.lower())
 

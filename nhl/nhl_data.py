@@ -133,6 +133,7 @@ def get_team_info(team_name):
 
 
 def get_mugshot(player_name):
+	
 
 	for x in range(0, len(respPlayers['data'])):
 		if respPlayers['data'][x]['playerLastName'].lower() == player_name.lower():
@@ -140,6 +141,16 @@ def get_mugshot(player_name):
 
 	for x in range(0, len(respGoalies['data'])):
 		if respGoalies['data'][x]['playerLastName'].lower() == player_name.lower():
+			return('https://nhl.bamcontent.com/images/headshots/current/168x168/' + str(respGoalies['data'][x]['playerId']) + '.jpg')
+
+def get_mugshot2(player_name, arg2):
+	print('in here')
+	for x in range(0, len(respPlayers['data'])):
+		if (respPlayers['data'][x]['playerFirstName'].lower() == player_name.lower()) and respPlayers['data'][x]['playerLastName'].lower() == arg2.lower():
+			return('https://nhl.bamcontent.com/images/headshots/current/168x168/' + str(respPlayers['data'][x]['playerId']) + '.jpg')
+
+	for x in range(0, len(respGoalies['data'])):
+		if respGoalies['data'][x]['playerFirstName'].lower() == player_name.lower() and respGoalies['data'][x]['playerLastName'].lower() == arg2.lower():
 			return('https://nhl.bamcontent.com/images/headshots/current/168x168/' + str(respGoalies['data'][x]['playerId']) + '.jpg')
 
 def get_todays_game_from(team_name):

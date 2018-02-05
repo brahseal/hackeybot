@@ -152,7 +152,7 @@ def get_message_from_command(cmd, args, player):
                 return mlb_commands[cmd](favorite_team.short_name,args)
             return mlb_commands[cmd](args)
         if cmd in nhl_commands:
-            print("1")
+            print('1')
             return nhl_commands[cmd](args)
         if cmd in other_commands:
             return other_commands[cmd](args)
@@ -171,6 +171,7 @@ def get_message_from_command(cmd, args, player):
             return hackey_commands[cmd][randint(0, len(hackey_commands[cmd])-1)]
     else:
         if cmd in nhl_commands:
+            print('2')
             return nhl_commands[cmd](args, player)
         if cmd in mlb_commands:
             return mlb_commands[cmd](args, player)
