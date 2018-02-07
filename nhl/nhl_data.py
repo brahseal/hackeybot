@@ -84,6 +84,12 @@ goalies = 'http://www.nhl.com/stats/rest/goalies?isAggregate=false&reportType=go
 respPlayers = requests.get(players).json()
 respGoalies = requests.get(goalies).json()
 
+def get_shooting_percentage(player_name):
+	
+	for x in range(0, len(respPlayers['data'])):
+		if respPlayers['data'][x]['playerLastName'].lower() == player_name.lower():
+			return str(respPlayers['data'][x]['playerName']) + ' shooting percentage: ' + str(format(respPlayers['data'][x]['shootingPctg'] * 100, '.2f')) + '%'
+
 def get_standings_info(division):
 	output = ''
 	json = requests.get('https://statsapi.web.nhl.com/api/v1/standings?season=20172018').json()

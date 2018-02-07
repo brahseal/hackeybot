@@ -2,7 +2,7 @@ garry = ["y e a r o f t h e y a k"]
 
 ron = ["https://postmediaprovince2.files.wordpress.com/2011/09/ronmaclean.jpg"]
 
-robbie = ["daddy", "harder daddy"]
+robbie = ["http://i.imgur.com/PzlASJG.png", "daddy", "harder daddy"]
 
 fish = [":B", ":<", "letsgOILERS"]
 

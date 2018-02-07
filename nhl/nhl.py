@@ -2,6 +2,10 @@ import requests
 from . import nhl_data
 # import nhl_data
 
+def get_shooting_percentage(player_name):
+    print('here')
+    return nhl_data.get_shooting_percentage(player_name)
+
 def get_standings(division):
     return nhl_data.get_standings_info(division)
 
