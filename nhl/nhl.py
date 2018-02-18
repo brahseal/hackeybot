@@ -148,3 +148,30 @@ def get_fw(team_name, player_name):
 def get_plus_minus(team_name, player_name):
     player_stats = get_player_live_stats(team_name, player_name)
     return player_name.title() + " +/- today: " + str(player_stats['plusMinus'])
+
+def who_scored(team_name, which_goal_string = "0"):
+    print("CALLED WITH PARAMS" + team_name.__class__.__name__ + which_goal_string.__class__.__name__)
+    which_goal = int(which_goal_string)
+    plays_data = nhl_data.get_all_plays_from(team_name)
+    scoring_plays_id = plays_data['scoringPlays']
+    all_plays = plays_data['allPlays']
+    if not scoring_plays_id:
+        return "No one has scored in this game yet"
+    team_scoring_plays = determine_team_scoring_plays(team_name, all_plays, scoring_plays_id)
+    if which_goal != 0:
+        if which_goal > len(team_scoring_plays):
+            return "Are u trying to make me crash? :@"
+        scoring_play = team_scoring_plays[int(which_goal)-1]
+        return scoring_play['result']['description']
+    else:
+        return team_scoring_plays[-1]['result']['description']
+
+def determine_team_scoring_plays(team_name, all_plays, game_scoring_plays):
+    team_scoring_plays = []
+    team_id = int(nhl_data.teams_dictionary[team_name])
+    for play in all_plays:
+        for scoring_play in game_scoring_plays:
+            if play['about']['eventIdx'] == scoring_play and play['team']['id'] == team_id:
+                team_scoring_plays.append(play)
+    print(team_scoring_plays[-1])
+    return team_scoring_plays
