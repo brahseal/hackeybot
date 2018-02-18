@@ -1,3 +1,5 @@
+goal = ["http://i.imgur.com/YDRvKjC.gif", "https://i.redd.it/zle7wp8y7qb01.jpg"]
+
 garry = ["y e a r o f t h e y a k"]
 
 ron = ["https://postmediaprovince2.files.wordpress.com/2011/09/ronmaclean.jpg"]
@@ -34,7 +36,7 @@ gare = ["drug addict", "raps suck", ">nba fan", "based gare tbh", "love that nig
 
 natty = ["roids", "dat manlet in the gym", "body builder", "jk i love him", "this is natty http://i.imgur.com/Q0DlMMe.gif", "fuck u @theNattypiano", "natty is dank"]
 
-mdoublee = ["http://i.imgur.com/bEq195P.png"]
+mdoublee = ["http://i.imgur.com/3JnJ2gu.png", "http://i.imgur.com/bEq195P.png"]
 
 gibbys = ["http://zippy.gfycat.com/InconsequentialIncompleteIndianrhinoceros.gif", "http://sports.cbsimg.net/images/visual/whatshot/USATSI_7387029.jpg",
           "http://i.imgur.com/beTLNBC.jpg","http://i.imgur.com/YfvE3Ki.gif", "http://i.imgur.com/WzIH07m.gif", "http://i.imgur.com/Xov522t.gif", "Good job son. Good job http://i.imgur.com/hPopXYK.gif",
