@@ -54,10 +54,11 @@
     $nextgame team_name - shows the date of the next game for given team name
     $intermissionoveryet - displays how many minutes left in intermission
     $assists team_name, player_name - shows how many assists the player has in that day so far
-    $goals team_name, player_name - shows how many goals the player has in that day so far 
+    $goals team_name, player_name - shows how many goals the player has in that day so far
     $hits team_name, player_name - shows how many hits the player has in that day so far
     $+/- team_name, player_name - shows plus minus stat for given player on that day
     $s% player_name - shows shooting percentage for given player
+    $whoscored team_name goal_order* - Shows who scored for the team name in the given order (if no order specified it outputs the last goal for team name)
 
 **Hackey commands:**  
 

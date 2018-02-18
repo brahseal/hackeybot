@@ -85,7 +85,7 @@ respPlayers = requests.get(players).json()
 respGoalies = requests.get(goalies).json()
 
 def get_shooting_percentage(player_name):
-	
+
 	for x in range(0, len(respPlayers['data'])):
 		if respPlayers['data'][x]['playerLastName'].lower() == player_name.lower():
 			return str(respPlayers['data'][x]['playerName']) + ' shooting percentage: ' + str(format(respPlayers['data'][x]['shootingPctg'] * 100, '.2f')) + '%'
@@ -139,7 +139,7 @@ def get_team_info(team_name):
 
 
 def get_mugshot(player_name):
-	
+
 
 	for x in range(0, len(respPlayers['data'])):
 		if respPlayers['data'][x]['playerLastName'].lower() == player_name.lower():
@@ -184,6 +184,13 @@ def get_linescore_from(team_name):
     URL = 'https://statsapi.web.nhl.com/api/v1/schedule?startDate='+date_string+'&expand=schedule.linescore&site=en_nhl&teamId='+teams_dictionary[team_name]
     resp = requests.get(URL).text;
     return json.loads(resp)['dates'][0]['games'][0]['linescore']
+
+def get_all_plays_from(team_name):
+    game_json = get_todays_game_from(team_name)
+    live_feed_url = game_json["link"]
+    URL =  "https://statsapi.web.nhl.com" + live_feed_url
+    resp = requests.get(URL).text
+    return json.loads(resp)['liveData']['plays']
 
 def stats(player_name):
 
