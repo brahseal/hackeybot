@@ -60,6 +60,7 @@ nba_commands = {
 }
 
 hackey_commands = {
+    "scott": hackey.scott,
     "wings": hackey.wings,
     "brahseal": hackey.brahseal,
     "avs": hackey.avs,
