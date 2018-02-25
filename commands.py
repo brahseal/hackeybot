@@ -53,6 +53,7 @@ nhl_commands = {
     "$+/-": nhl.get_plus_minus,
     "$s%": nhl.get_shooting_percentage,
     "$whoscored": nhl.who_scored,
+    "$age": nhl.get_age,
 }
 
 nba_commands = {

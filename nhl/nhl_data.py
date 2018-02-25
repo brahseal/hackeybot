@@ -95,6 +95,17 @@ teams_dictionary = {
 }
 
 
+def get_age(player_name):
+	for x in range(0, len(respPlayers['data'])):
+		if respPlayers['data'][x]['playerLastName'].lower() == player_name.lower():
+			age = str(respPlayers['data'][x]['playerBirthDate'])
+			arr = age.split('-')
+			return str(respPlayers['data'][x]['playerName']) + ' is ' + str(int(year) - int(arr[0])) + ' years old.'
+	for x in range(0, len(respGoalies['data'])):
+		if respGoalies['data'][x]['playerLastName'].lower() == player_name.lower():
+			age = str(respGoalies['data'][x]['playerBirthDate'])
+			arr = age.split('-')
+			return str(respGoalies['data'][x]['playerName']) + ' is ' + str(int(year) - int(arr[0])) + ' years old.'
 def get_shooting_percentage(player_name):
 
 	for x in range(0, len(respPlayers['data'])):
