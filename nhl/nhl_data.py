@@ -7,6 +7,7 @@ import csv
 from . import current_date
 # import current_date
 from datetime import datetime
+from datetime import date
 from apscheduler.scheduler import Scheduler
 
 # Start the scheduler
@@ -99,13 +100,18 @@ def get_age(player_name):
 	for x in range(0, len(respPlayers['data'])):
 		if respPlayers['data'][x]['playerLastName'].lower() == player_name.lower():
 			age = str(respPlayers['data'][x]['playerBirthDate'])
-			arr = age.split('-')
-			return str(respPlayers['data'][x]['playerName']) + ' is ' + str(int(year) - int(arr[0])) + ' years old.'
+			birthday = datetime.strptime(age, '%Y-%m-%d')
+			return str(respPlayers['data'][x]['playerName']) + ' is ' + str(calculate_age(birthday)) + ' years old.'
 	for x in range(0, len(respGoalies['data'])):
 		if respGoalies['data'][x]['playerLastName'].lower() == player_name.lower():
 			age = str(respGoalies['data'][x]['playerBirthDate'])
-			arr = age.split('-')
-			return str(respGoalies['data'][x]['playerName']) + ' is ' + str(int(year) - int(arr[0])) + ' years old.'
+			birthday = datetime.strptime(age, '%Y-%m-%d')
+			return str(respGoalies['data'][x]['playerName']) + ' is ' + str(calculate_age(birthday)) + ' years old.'
+
+def calculate_age(born):
+    	today = date.today()
+    	return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
+
 def get_shooting_percentage(player_name):
 
 	for x in range(0, len(respPlayers['data'])):
