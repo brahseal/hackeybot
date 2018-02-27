@@ -1,5 +1,8 @@
 from random import randint
-import datetime
+from datetime import datetime
+from datetime import date
+from dateutil.relativedelta import relativedelta
+
 
 pennypics = ["http://scontent-yyz1-1.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/24838559_1688008284596256_8775064742067699712_n.jpg", "http://i.imgur.com/c4dyhjd.png", "http://i.imgur.com/8vtqKdo.png",
  "http://i.imgur.com/xOIHJ6L.png", "http://i.imgur.com/JDTpgkB.png", "http://i.imgur.com/xIlgI1H.png"
@@ -29,21 +32,11 @@ def get_penny_dance():
     return "http://i.gyazo.com/0bafa3d42ebf773da5b90d2cd6cf3f17.gif"
 
 def get_penny_age():
-    now = datetime.datetime.now()
-    year = now.year
-    month = now.month
-    day = now.day
+    print('here')
+    now = datetime.now()
+    dob = datetime.strptime('2000-06-13', '%Y-%m-%d')
 
-    pb = datetime.datetime(2000,6,13)
-    today = datetime.datetime(year,month,day)
-    years = today.year - pb.year
+    rdelta = relativedelta(now, dob)
 
-    months = today.month - pb.month
-    if months < 0:
-        years -= 1
-
-    days = today.day - pb.day
-    if days < 0:
-        months-=1
-
-    return "Penny has " + str(years) + " years " + str(months) + " month and " + str(days) + " days."
+    print(rdelta.years)
+    return "Penny is " + str(rdelta.years) + " years, " + str(rdelta.months) + " months and " + str(rdelta.days) + " days old."
