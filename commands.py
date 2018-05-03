@@ -98,6 +98,7 @@ hackey_commands = {
     "nucks": hackey.nucks,
     "don": hackey.don,
     "smoak": hackey.smoak,
+    "smoakfan": hackey.smoakfan,
     "lou": leafs.lou,
     "help": hackey.help_me,
     "brad": hackey.brad,

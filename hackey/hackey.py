@@ -116,6 +116,8 @@ king = ["where the hoes at"]
 
 smoak = ["MVP"]
 
+smoakfan = ["i love you bb"]
+
 dasit = ["http://i0.kym-cdn.com/photos/images/newsfeed/000/668/455/239.jpg"]
 
 brad = ["https://i.gyazo.com/537f19d751ddcd7e058da897777e4f31.png"]
