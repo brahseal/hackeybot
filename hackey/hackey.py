@@ -1,3 +1,9 @@
+celly = ["http://i.imgur.com/qlfftCB.gif"]
+
+kadri = ["https://i.imgur.com/yQtu0YO.jpg"]
+
+tessa = ["http://media.giphy.com/media/iBjygkR4WAORPKpmy0/giphy.gif", "http://media.giphy.com/media/1rOrBX0GWR01B1YqF7/giphy.gif", "http://media.giphy.com/media/1zlDTxRrbO70bDJUIL/giphy.gif", "http://media.giphy.com/media/1pA5ynf9Pk5VlXqFFw/giphy.gif"]
+
 kreidergirl = ["brows on fleek"]
 
 scott = ["http://i.imgur.com/N97t6Z4.png?1"]

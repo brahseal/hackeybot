@@ -44,7 +44,7 @@ nhl_commands = {
     "$ppg": nhl.get_ppg,
     "$standings": nhl.get_standings,
     "$nextgame": nhl.get_next_game_for,
-    "$intermissionoveryet": nhl.get_remaining_intermission_time,
+    "$int": nhl.get_remaining_intermission_time,
     "$timeonice": nhl.get_time_on_ice,
     "$assists": nhl.get_assists,
     "$goals": nhl.get_goals,
@@ -118,6 +118,9 @@ hackey_commands = {
     "metsfan": hackey.metsfan,
     "king": hackey.king,
     "goal": hackey.goal,
+    "tessa": hackey.tessa,
+    "celly": hackey.celly,
+    "kadri": hackey.kadri,
 }
 
 other_commands = {
@@ -134,7 +137,7 @@ other_commands = {
         "motivation": random_responses.get_motivation_image,
         "quote": random_responses.get_quote,
         "countdown": leafs.get_countdown,
-        "definition": urbandict.get_random_definition_from,
+       # "definition": urbandict.get_random_definition_from,
        # "define": urbandict.get_random_definition_from,
         "howistheweather": weather_lookup.get_weather_for_city,
 }

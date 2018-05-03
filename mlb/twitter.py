@@ -13,7 +13,7 @@ def get_last_tweet_from_dome():
     if mlb.is_team_playing(favorite_team.short_name) and mlb.is_team_at_home(favorite_team.short_name):
         tweets = api.user_timeline(screen_name = 'IstheDomeOpen', count = 5)
         for tweet in tweets:
-            if "OPEN" in tweet.text or "CLOSED" in tweet.text:
+            if "open" in tweet.text.lower() or "closed" in tweet.text.lower():
                 if (datetime.datetime.now() - tweet.created_at).days < 1:
                     return tweet.text
 

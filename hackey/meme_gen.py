@@ -1,55 +1,51 @@
-from urllib.request import urlopen
+import requests
+from bs4 import BeautifulSoup
 
-def get_avi(fucker):
-    geturl = "http://46.228.199.201/mdoublee/memegen2/php/wrapper_oldmemegen.php?selectedscript=basic_getavi_0&fucker="+fucker
-    memeurl = urlopen(geturl).read()
-    string_url = str(memeurl.strip())
-    return string_url.split("'", 2)[1]
+def getURL(meme, fucker):
 
+	searchUrl = "http://46.228.199.201/cgi-bin/mdoublee_memegen/" + meme + ".cgi?fucker=" + fucker
+	
+	d = requests.get(searchUrl).text
+	soup = BeautifulSoup(d, 'html.parser')
+	img_tags = soup.find_all('img')
+	imgs_urls = []
+	for img in img_tags:
+			if img['src'].startswith("http"):
+				imgs_urls.append(img['src'])
+	
+	return imgs_urls[0]
+
+	
 def get_meme_bed(fucker):
-    geturl = "http://46.228.199.201/mdoublee/memegen2/php/wrapper_oldmemegen.php?selectedscript=meme_bed_0&fucker="+fucker
-    memeurl = urlopen(geturl).read()
-    string_url = str(memeurl.strip())
-    return string_url.split("'", 2)[1]
-
+	img = getURL('meme_bed_0', fucker)
+	return(img)
+	
 def get_meme_hang(fucker):
-    geturl = "http://46.228.199.201/mdoublee/memegen2/php/wrapper_oldmemegen.php?selectedscript=meme_hang_0&fucker="+fucker
-    memeurl = urlopen(geturl).read()
-    string_url = str(memeurl.strip())
-    return string_url.split("'", 2)[1]
-
+	img = getURL('meme_hang_0', fucker)
+	return(img)
+	
 def get_meme_grave(fucker):
-    geturl = "http://46.228.199.201/mdoublee/memegen2/php/wrapper_oldmemegen.php?selectedscript=meme_grave_0&fucker="+fucker
-    memeurl = urlopen(geturl).read()
-    string_url = str(memeurl.strip())
-    return string_url.split("'", 2)[1]
-
+	img = getURL('meme_grave_0', fucker)
+	return(img)
+	
 def get_meme_penbox(fucker):
-    geturl = "http://46.228.199.201/mdoublee/memegen2/php/wrapper_oldmemegen.php?selectedscript=meme_penbox_0&fucker="+fucker
-    memeurl = urlopen(geturl).read()
-    string_url = str(memeurl.strip())
-    return string_url.split("'", 2)[1]
-
+	img = getURL('meme_penbox_0', fucker)
+	return(img)
+	
 def get_meme_golf(fucker):
-    geturl = "http://46.228.199.201/mdoublee/memegen2/php/wrapper_oldmemegen.php?selectedscript=meme_golf_0&fucker="+fucker
-    memeurl = urlopen(geturl).read()
-    string_url = str(memeurl.strip())
-    return string_url.split("'", 2)[1]
-
+	img = getURL('meme_golf_0', fucker)
+	return(img)
+	
 def get_meme_pooper(fucker):
-    geturl = "http://46.228.199.201/mdoublee/memegen2/php/wrapper_oldmemegen.php?selectedscript=meme_pooper_0&fucker="+fucker
-    memeurl = urlopen(geturl).read()
-    string_url = str(memeurl.strip())
-    return string_url.split("'", 2)[1]
-
+	img = getURL('meme_pooper_0', fucker)
+	return(img)
+	
 def get_meme_trash(fucker):
-    geturl = "http://46.228.199.201/mdoublee/memegen2/php/wrapper_oldmemegen.php?selectedscript=meme_trash_0&fucker="+fucker
-    memeurl = urlopen(geturl).read()
-    string_url = str(memeurl.strip())
-    return string_url.split("'", 2)[1]
-
+	img = getURL('meme_trash_0', fucker)
+	return(img)
+	
 def get_meme_diapers(fucker):
-    geturl = "http://46.228.199.201/mdoublee/memegen2/php/wrapper_oldmemegen.php?selectedscript=meme_diapers_2&fucker="+fucker
-    memeurl = urlopen(geturl).read()
-    string_url = str(memeurl.strip())
-    return string_url.split("'", 2)[1]
+	img = getURL('meme_diapers_2', fucker)
+	return(img)
+
+
