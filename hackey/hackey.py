@@ -12,6 +12,10 @@ goal = ["http://i.imgur.com/YDRvKjC.gif", "https://i.redd.it/zle7wp8y7qb01.jpg"]
 
 garry = ["y e a r o f t h e y a k"]
 
+jforced = ["https://i.imgur.com/xzs7DXS.jpg"]
+
+nikki = ["https://i.imgur.com/9hRfOdY.jpg", "https://i.imgur.com/bWVh8DU.jpg", "https://i.imgur.com/Tmpc9Pe.jpg"]
+
 ron = ["https://postmediaprovince2.files.wordpress.com/2011/09/ronmaclean.jpg"]
 
 robbie = ["http://i.imgur.com/PzlASJG.png", "daddy", "harder daddy"]
