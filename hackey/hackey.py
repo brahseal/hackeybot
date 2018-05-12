@@ -110,7 +110,7 @@ moose = ["based moose", "http://www.cbc.ca/natureofthings/content/images/episode
 
 don = ["http://i.imgur.com/0QMnE4s.png", "http://i.imgur.com/kNWzISx.png"]
 
-jay = ["http://i.imgur.com/P9z9v0E.jpg", "http://i.imgur.com/edFUR1l.jpg", "http://i.imgur.com/FyDMHF6.gif", "http://i.imgur.com/FvqZQkU.gif", "http://i.imgur.com/LppTCe9.gif"]
+jay = ["http://i.imgur.com/u3AffXW.gif", "http://i.imgur.com/P9z9v0E.jpg", "http://i.imgur.com/edFUR1l.jpg", "http://i.imgur.com/FyDMHF6.gif", "http://i.imgur.com/FvqZQkU.gif", "http://i.imgur.com/LppTCe9.gif", "http://i.imgur.com/dCxROFH.jpg", "http://i.imgur.com/NehWBLm.jpg", "http://i.imgur.com/uqIKZlu.gif", "http://i.imgur.com/KPqZK8e.gif", "http://i.imgur.com/6bcBINM.gif"]
 
 sens = ["sens warming up for the 2017 season http://www.sensplex.ca/sites/default/files/ltp_background.jpg", "https://pbs.twimg.com/media/DEEl6TOWAAAYK1M.jpg", "https://pbs.twimg.com/media/CFdQhTcUkAEe6nD.jpg", "https://pbs.twimg.com/media/C73FV6TVQAQBnmZ.jpg:large", "sens team meeting https://nhl.bamcontent.com/images/photos/290629054/1024x576/cut.jpg"]
 
