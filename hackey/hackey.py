@@ -48,6 +48,8 @@ pudge = ["based pudge", "pedo but my friend", "go leafs go", "leafs bro"]
 
 gare = ["drug addict", "raps suck", ">nba fan", "based gare tbh", "love that nigga"]
 
+osuna = ["https://i.imgur.com/v4ohNcy.png"]
+
 natty = ["roids", "dat manlet in the gym", "body builder", "jk i love him", "this is natty http://i.imgur.com/Q0DlMMe.gif", "fuck u @theNattypiano", "natty is dank"]
 
 mdoublee = ["http://i.imgur.com/3JnJ2gu.png", "http://i.imgur.com/bEq195P.png"]

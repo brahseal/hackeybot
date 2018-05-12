@@ -64,6 +64,8 @@ hackey_commands = {
     "kreidergirl": hackey.kreidergirl,
     "jforced": hackey.jforced,
     "nikki": hackey.nikki,
+    "osuna": hackey.osuna,
+    "wifebeater": hackey.osuna,
     "thikki": hackey.nikki,
     "scott": hackey.scott,
     "wings": hackey.wings,
