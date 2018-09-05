@@ -127,6 +127,7 @@ hackey_commands = {
     "tessa": hackey.tessa,
     "celly": hackey.celly,
     "kadri": hackey.kadri,
+    "widders": hackey.widders,
 }
 
 other_commands = {
