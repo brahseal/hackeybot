@@ -130,6 +130,8 @@ brad = ["https://i.gyazo.com/537f19d751ddcd7e058da897777e4f31.png"]
 
 anon = ["cat anon is best anon"]
 
+widders = ["https://i.imgur.com/KtswVll.png"]
+
 annika = ["https://s-media-cache-ak0.pinimg.com/736x/a5/22/07/a522070f1409f985e248e5a2fc6a531b--cute-girls-pretty-girls.jpg",
           "https://s-media-cache-ak0.pinimg.com/736x/a5/22/07/a522070f1409f985e248e5a2fc6a531b--cute-girls-pretty-girls.jpg",
           "https://images-cdn.9gag.com/photo/aprP7y9_700b.jpg",
