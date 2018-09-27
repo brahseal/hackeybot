@@ -132,6 +132,8 @@ anon = ["cat anon is best anon"]
 
 widders = ["https://i.imgur.com/KtswVll.png"]
 
+rekt = ["https://i.imgur.com/RCC0Lg5.gif"]
+
 annika = ["https://s-media-cache-ak0.pinimg.com/736x/a5/22/07/a522070f1409f985e248e5a2fc6a531b--cute-girls-pretty-girls.jpg",
           "https://s-media-cache-ak0.pinimg.com/736x/a5/22/07/a522070f1409f985e248e5a2fc6a531b--cute-girls-pretty-girls.jpg",
           "https://images-cdn.9gag.com/photo/aprP7y9_700b.jpg",

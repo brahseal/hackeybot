@@ -128,6 +128,7 @@ hackey_commands = {
     "celly": hackey.celly,
     "kadri": hackey.kadri,
     "widders": hackey.widders,
+    "rekt": hackey.rekt,
 }
 
 other_commands = {
@@ -147,6 +148,7 @@ other_commands = {
        # "definition": urbandict.get_random_definition_from,
        # "define": urbandict.get_random_definition_from,
         "howistheweather": weather_lookup.get_weather_for_city,
+    
 }
 
 meme_gen_commands = {
