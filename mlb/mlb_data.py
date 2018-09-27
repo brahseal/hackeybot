@@ -28,8 +28,8 @@ teams_dictionary = {'cubs': "Cubs", 'yankees': "Yankees", 'redsox': "Red Sox",
                     'cards': "Cardinals", 'as': "Athletics", 'athletics': "Athletics",
                     'os': "Orioles", 'orioles': "Orioles", 'rangers': 'Rangers', 'twins': "Twins",
                     'rockies': "Rockies", 'phillies': "Phillies", 'tigers': "Tigers",
-                    'rays': "Rays", 'braves': "Braves", 'dbacks': "Diamondbacks",
-                    'diamondbacks': "Diamondbacks", 'royals': "Royals", 'brewers': "Brewers",
+                    'rays': "Rays", 'braves': "Braves", 'dbacks': "D-backs",
+                    'diamondbacks': "D-backs", 'royals': "Royals", 'brewers': "Brewers",
                     'whitesox': "White Sox", 'reds': "Reds", 'marlins': "Marlins",
                     'padres': "Padres", 'nats': "Nationals", 'mariners': "Mariners"}
 

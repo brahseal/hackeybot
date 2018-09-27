@@ -3,17 +3,12 @@ from bs4 import BeautifulSoup
 
 def getURL(meme, fucker):
 
-	searchUrl = "http://46.228.199.201/cgi-bin/mdoublee_memegen/" + meme + ".cgi?fucker=" + fucker
+	if fucker != "mdoublee":
+
+		outputURL =  "http://46.228.199.201/mdoublee/memegen/img_output/" + meme + "_" + fucker + ".png"
+		print(outputURL)
+		return outputURL
 	
-	d = requests.get(searchUrl).text
-	soup = BeautifulSoup(d, 'html.parser')
-	img_tags = soup.find_all('img')
-	imgs_urls = []
-	for img in img_tags:
-			if img['src'].startswith("http"):
-				imgs_urls.append(img['src'])
-	
-	return imgs_urls[0]
 
 	
 def get_meme_bed(fucker):

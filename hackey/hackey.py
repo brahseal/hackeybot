@@ -18,7 +18,7 @@ nikki = ["https://i.imgur.com/9hRfOdY.jpg", "https://i.imgur.com/bWVh8DU.jpg", "
 
 ron = ["https://postmediaprovince2.files.wordpress.com/2011/09/ronmaclean.jpg"]
 
-robbie = ["http://i.imgur.com/PzlASJG.png", "daddy", "harder daddy"]
+robbie = ["http://i.imgur.com/IAqQypW.png", "http://i.imgur.com/PzlASJG.png", "daddy", "harder daddy"]
 
 fish = [":B", ":<", "letsgOILERS"]
 

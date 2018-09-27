@@ -5,6 +5,6 @@ lou = ["https://media.giphy.com/media/bGcJcUnTt77uE/giphy.gif", "http://betweent
 
 def get_countdown():
     today = datetime.date.today()
-    leafs_opener = datetime.date(2017, 10, 4)
+    leafs_opener = datetime.date(2018, 9, 18)
     diff = leafs_opener - today
     return str(diff.days) + " days for leafs"

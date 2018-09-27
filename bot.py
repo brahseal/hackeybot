@@ -6,7 +6,7 @@ import commands
 import smartbot
 
 bot_account = "hackeybot"
-bot_password = ""
+bot_password = "matts4selke"
 
 class bot(ch.RoomManager):
 
@@ -42,7 +42,7 @@ class bot(ch.RoomManager):
 # Testing room
 # rooms = ["testingbotfam"]
 
-rooms = ["nym69", "nym70", "nym71", "bb6969", "bluejays69", "thepenaltybox", "testingbotfam"]
+rooms = ["nym69", "nym70", "nym71", "bb6969", "bluejays69",  "testingbotfam"]
 username = bot_account
 password = bot_password
 
