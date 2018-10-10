@@ -1,3 +1,7 @@
+gleafs = ["MATTS IS A GOLDEN GOD"]
+
+gq = ["https://giant.gfycat.com/NeedyEnormousAndeancat.gif"]
+
 celly = ["http://i.imgur.com/qlfftCB.gif"]
 
 kadri = ["https://i.imgur.com/yQtu0YO.jpg"]
@@ -8,7 +12,7 @@ kreidergirl = ["brows on fleek"]
 
 scott = ["http://i.imgur.com/N97t6Z4.png?1"]
 
-goal = ["http://i.imgur.com/YDRvKjC.gif", "https://i.redd.it/zle7wp8y7qb01.jpg"]
+goal = ["http://i.imgur.com/gpV4fH8.gif", "http://i.imgur.com/YDRvKjC.gif", "https://i.redd.it/zle7wp8y7qb01.jpg"]
 
 garry = ["y e a r o f t h e y a k"]
 

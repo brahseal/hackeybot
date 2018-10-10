@@ -45,6 +45,7 @@ def get_all_game_scores():
 def get_todays_game( team_name ):
     team = teams_dictionary[team_name]
     game = mlbgame.day(year, month, day, home=team, away=team)
+    print(game[0])
     if game:
         return(game[0])
     else:

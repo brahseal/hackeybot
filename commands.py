@@ -54,6 +54,7 @@ nhl_commands = {
     "$s%": nhl.get_shooting_percentage,
     "$whoscored": nhl.who_scored,
     "$age": nhl.get_age,
+    "$leader": nhl.get_leader
 }
 
 nba_commands = {
@@ -129,6 +130,9 @@ hackey_commands = {
     "kadri": hackey.kadri,
     "widders": hackey.widders,
     "rekt": hackey.rekt,
+    "gq": hackey.gq,
+    "GQ": hackey.gq,
+    "gleafs": hackey.gleafs
 }
 
 other_commands = {

@@ -18,8 +18,8 @@ year = current_date.get_year()
 month = current_date.get_month()
 day = current_date.get_day()
 
-players = 'http://www.nhl.com/stats/rest/skaters?isAggregate=false&reportType=basic&isGame=false&reportName=skatersummary&sort=[{%22property%22:%22points%22,%22direction%22:%22DESC%22},{%22property%22:%22goals%22,%22direction%22:%22DESC%22},{%22property%22:%22assists%22,%22direction%22:%22DESC%22}]&cayenneExp=gameTypeId=2%20and%20seasonId%3E=20172018%20and%20seasonId%3C=20172018'
-goalies = 'http://www.nhl.com/stats/rest/goalies?isAggregate=false&reportType=goalie_basic&isGame=false&reportName=goaliesummary&sort=[{%22property%22:%22wins%22,%22direction%22:%22DESC%22}]&cayenneExp=gameTypeId=2%20and%20seasonId%3E=20172018%20and%20seasonId%3C=20172018'
+players = 'http://www.nhl.com/stats/rest/skaters?isAggregate=false&reportType=basic&isGame=false&reportName=skatersummary&sort=[{%22property%22:%22points%22,%22direction%22:%22DESC%22},{%22property%22:%22goals%22,%22direction%22:%22DESC%22},{%22property%22:%22assists%22,%22direction%22:%22DESC%22}]&cayenneExp=gameTypeId=2%20and%20seasonId%3E=20182019%20and%20seasonId%3C=20182019'
+goalies = 'http://www.nhl.com/stats/rest/goalies?isAggregate=false&reportType=goalie_basic&isGame=false&reportName=goaliesummary&sort=[{%22property%22:%22wins%22,%22direction%22:%22DESC%22}]&cayenneExp=gameTypeId=2%20and%20seasonId%3E=20182019%20and%20seasonId%3C=20182019'
 
 
 respPlayers = requests.get(players).json()
@@ -27,9 +27,9 @@ respGoalies = requests.get(goalies).json()
 
 def update_stats():
     global players
-    players = 'http://www.nhl.com/stats/rest/skaters?isAggregate=false&reportType=basic&isGame=false&reportName=skatersummary&sort=[{%22property%22:%22points%22,%22direction%22:%22DESC%22},{%22property%22:%22goals%22,%22direction%22:%22DESC%22},{%22property%22:%22assists%22,%22direction%22:%22DESC%22}]&cayenneExp=gameTypeId=2%20and%20seasonId%3E=20172018%20and%20seasonId%3C=20172018'
+    players = 'http://www.nhl.com/stats/rest/skaters?isAggregate=false&reportType=basic&isGame=false&reportName=skatersummary&sort=[{%22property%22:%22points%22,%22direction%22:%22DESC%22},{%22property%22:%22goals%22,%22direction%22:%22DESC%22},{%22property%22:%22assists%22,%22direction%22:%22DESC%22}]&cayenneExp=gameTypeId=2%20and%20seasonId%3E=20182019%20and%20seasonId%3C=20182019'
     global goalies
-    goalies = 'http://www.nhl.com/stats/rest/goalies?isAggregate=false&reportType=goalie_basic&isGame=false&reportName=goaliesummary&sort=[{%22property%22:%22wins%22,%22direction%22:%22DESC%22}]&cayenneExp=gameTypeId=2%20and%20seasonId%3E=20172018%20and%20seasonId%3C=20172018'
+    goalies = 'http://www.nhl.com/stats/rest/goalies?isAggregate=false&reportType=goalie_basic&isGame=false&reportName=goaliesummary&sort=[{%22property%22:%22wins%22,%22direction%22:%22DESC%22}]&cayenneExp=gameTypeId=2%20and%20seasonId%3E=20182019%20and%20seasonId%3C=20182019'
     global respPlayers
     respPlayers = requests.get(players).json()
     global respGoalies
@@ -96,6 +96,16 @@ teams_dictionary = {
 }
 
 
+def get_leader(stat_name):
+	leaderJSON = requests.get('http://www.nhl.com/stats/rest/leaders?season=20182019&gameType=2').json()
+	if stat_name.lower() == 'points' or stat_name.lower() == 'p':
+		return 'Points leader: ' +  str(leaderJSON['skater'][0]['leaders'][0]['fullName']) + ' (' + str(leaderJSON['skater'][0]['leaders'][0]['value']) + ')'
+	if stat_name.lower() == 'goals' or stat_name.lower() == 'g':
+                return 'Goals leader: ' +  str(leaderJSON['skater'][1]['leaders'][0]['fullName']) + ' (' + str(leaderJSON['skater'][1]['leaders'][0]['value']) + ')'
+	if stat_name.lower() == 'assists' or stat_name.lower() == 'a':
+                return 'Assists leader: ' +  str(leaderJSON['skater'][2]['leaders'][0]['fullName']) + ' (' + str(leaderJSON['skater'][2]['leaders'][0]['value']) + ')'
+
+
 def get_age(player_name):
 	for x in range(0, len(respPlayers['data'])):
 		if respPlayers['data'][x]['playerLastName'].lower() == player_name.lower():
@@ -120,7 +130,7 @@ def get_shooting_percentage(player_name):
 
 def get_standings_info(division):
 	output = ''
-	json = requests.get('https://statsapi.web.nhl.com/api/v1/standings?season=20172018').json()
+	json = requests.get('https://statsapi.web.nhl.com/api/v1/standings?season=20182019').json()
 	divisionNum = divisions_dictionary[division]
 	listOfTeams = json['records'][int(divisionNum)]['teamRecords']
 	for x in range(0, len(listOfTeams)):

@@ -2,6 +2,9 @@ import requests
 from . import nhl_data
 # import nhl_data
 
+def get_leader(stat_name):
+    return nhl_data.get_leader(stat_name)
+
 def get_age(player_name):
     return nhl_data.get_age(player_name)
 

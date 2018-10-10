@@ -22,6 +22,7 @@ def is_team_playing( team_name ):
 #!score team_name command return
 def get_team_score( team_name ):
     game = mlb_data.get_todays_game(team_name)
+    print(mlb_data.get_game_overview_xml(team_name))
     if game:
         return(str(game))
     else:
