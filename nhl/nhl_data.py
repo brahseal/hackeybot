@@ -104,6 +104,12 @@ def get_leader(stat_name):
                 return 'Goals leader: ' +  str(leaderJSON['skater'][1]['leaders'][0]['fullName']) + ' (' + str(leaderJSON['skater'][1]['leaders'][0]['value']) + ')'
 	if stat_name.lower() == 'assists' or stat_name.lower() == 'a':
                 return 'Assists leader: ' +  str(leaderJSON['skater'][2]['leaders'][0]['fullName']) + ' (' + str(leaderJSON['skater'][2]['leaders'][0]['value']) + ')'
+	if stat_name.lower() == '+-' or stat_name.lower() == 'pm':
+                return 'Assists leader: ' +  str(leaderJSON['skater'][3]['leaders'][0]['fullName']) + ' (' + str(leaderJSON['skater'][3]['leaders'][0]['valueLabel']) + ')'
+	if stat_name.lower() == 'gaa' or stat_name.lower() == 'ga':
+                return 'Goals against leader: ' +  str(leaderJSON['goalie'][0]['leaders'][0]['fullName']) + ' (' + str(leaderJSON['goalie'][0]['leaders'][0]['valueLabel']) + ')'
+	if stat_name.lower() == 'save' or stat_name.lower() == 'sv':
+                return 'Save % leader: ' +  str(leaderJSON['goalie'][1]['leaders'][0]['fullName']) + ' (' + str(leaderJSON['goalie'][1]['leaders'][0]['valueLabel']) + ')'
 
 
 def get_age(player_name):
@@ -234,7 +240,7 @@ def stats(player_name):
 
 	for x in range(0, len(respPlayers['data'])):
 		if respPlayers['data'][x]['playerLastName'].lower() == player_name.lower():
-			return 'GP: ' + str(respPlayers['data'][x]['gamesPlayed']) + ' G: ' + str(respPlayers['data'][x]['goals']) + ' A: ' + str(respPlayers['data'][x]['assists'])
+			return 'GP:' + str(respPlayers['data'][x]['gamesPlayed']) + '  G:' + str(respPlayers['data'][x]['goals']) + '  A:' + str(respPlayers['data'][x]['assists']) + "  P:" + str(respPlayers['data'][x]['points'])
 
 	for x in range(0, len(respGoalies['data'])):
 		if respGoalies['data'][x]['playerLastName'].lower() == player_name.lower():
