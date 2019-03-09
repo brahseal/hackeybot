@@ -1,3 +1,7 @@
+violin = ["http://i.imgur.com/Mqdl3ze.gif"]
+
+floss = ["https://i.imgur.com/jPuX7ey.gif"]
+
 gleafs = ["MATTS IS A GOLDEN GOD"]
 
 gq = ["https://giant.gfycat.com/NeedyEnormousAndeancat.gif"]
@@ -112,7 +116,7 @@ ninja = ["http://i.imgur.com/nVSrV33.jpg", "http://i.imgur.com/hrPpbox.png", "ht
 
 moose = ["based moose", "http://www.cbc.ca/natureofthings/content/images/episodes/moose_infographic.jpg"]
 
-don = ["http://i.imgur.com/0QMnE4s.png", "http://i.imgur.com/kNWzISx.png"]
+don = ["https://i.imgur.com/N8UZRwT.png", "http://i.imgur.com/0QMnE4s.png", "http://i.imgur.com/kNWzISx.png"]
 
 jay = ["http://i.imgur.com/u3AffXW.gif", "http://i.imgur.com/P9z9v0E.jpg", "http://i.imgur.com/edFUR1l.jpg", "http://i.imgur.com/FyDMHF6.gif", "http://i.imgur.com/FvqZQkU.gif", "http://i.imgur.com/LppTCe9.gif", "http://i.imgur.com/dCxROFH.jpg", "http://i.imgur.com/NehWBLm.jpg", "http://i.imgur.com/uqIKZlu.gif", "http://i.imgur.com/KPqZK8e.gif", "http://i.imgur.com/6bcBINM.gif"]
 

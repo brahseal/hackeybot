@@ -132,7 +132,9 @@ hackey_commands = {
     "rekt": hackey.rekt,
     "gq": hackey.gq,
     "GQ": hackey.gq,
-    "gleafs": hackey.gleafs
+    "gleafs": hackey.gleafs,
+    "floss": hackey.floss,
+    "violin": hackey.violin
 }
 
 other_commands = {
