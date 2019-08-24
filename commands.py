@@ -8,11 +8,9 @@ from hackey import random_responses
 from hackey import hackey
 from hackey import meme_gen
 from hackey import urbandict
-from hackey import weather_lookup
 from nhl import nhl
 from nhl import leafs
 from mlb import twitter
-from nba import nba_data
 
 mlb_commands = {
 
@@ -56,10 +54,6 @@ nhl_commands = {
     "$whoscored": nhl.who_scored,
     "$age": nhl.get_age,
     "$leader": nhl.get_leader
-}
-
-nba_commands = {
-    '#score': nba_data.get_score_from_team,
 }
 
 hackey_commands = {
@@ -155,7 +149,6 @@ other_commands = {
         "countdown": leafs.get_countdown,
        # "definition": urbandict.get_random_definition_from,
        # "define": urbandict.get_random_definition_from,
-        "howistheweather": weather_lookup.get_weather_for_city,
     
 }
 
