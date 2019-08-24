@@ -17,7 +17,6 @@ from nba import nba_data
 mlb_commands = {
 
     "score": mlb.get_team_score,
-    "pitching": mlb.get_current_pitcher,
     "batting": mlb.get_current_batter,
     "line": mlb.get_pitching_line,
     "record": mlb.get_team_record,
@@ -29,8 +28,10 @@ mlb_commands = {
     "starting": mlb.get_starting_pitcher,
     "stats": mlb.get_player_stats,
     "seasonstats": mlb.get_player_season_stats,
-    "mugshot": mlb.get_mugshot,
+    "show": mlb.get_mugshot,
     "howdidwescore": mlb.get_how_we_score,
+    "standings": mlb.get_standings,
+    "conditions": mlb.get_conditions
 }
 
 nhl_commands = {
@@ -134,7 +135,8 @@ hackey_commands = {
     "GQ": hackey.gq,
     "gleafs": hackey.gleafs,
     "floss": hackey.floss,
-    "violin": hackey.violin
+    "violin": hackey.violin,
+    "doomis": hackey.doomis
 }
 
 other_commands = {
@@ -144,7 +146,7 @@ other_commands = {
         "doggo": doggos.get_doggo,
         "breeds": doggos.get_all_breeds_name,
         "fap": grills.get_qts,
-        "dome": twitter.get_last_tweet_from_dome,
+        #"dome": mlb.get_conditions('jays'),
         "tip": random_responses.get_shitty_LPT,
         "thought": random_responses.get_thought,
         "joke": random_responses.get_joke,

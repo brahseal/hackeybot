@@ -7,6 +7,12 @@ import xml.etree.ElementTree as ET
 import mlb.mlb_data as mlb_data
 import mlb.favorite_team as favorite_team
 
+def get_conditions(team_name):
+    return(mlb_data.get_weather(team_name))
+
+def get_standings(division):
+    return(mlb_data.get_standings(division))
+
 def is_team_at_home( team_name ):
     game = mlb_data.get_todays_game(team_name)
     if game.home_team == mlb_data.teams_dictionary[team_name]:
@@ -21,29 +27,12 @@ def is_team_playing( team_name ):
 
 #!score team_name command return
 def get_team_score( team_name ):
-    game = mlb_data.get_todays_game(team_name)
-    print(mlb_data.get_game_overview_xml(team_name))
-    if game:
-        return(str(game))
-    else:
-        return("Sorry, looks like there's no " + team_name + " game today")
+    print(mlb_data.get_score(team_name))
+    return mlb_data.get_score(team_name)
+    
 
-#!pitching team_name command return
-def get_current_pitcher( team_name ):
-    game_status = mlb_data.get_game_status(team_name)
-    if game_status == "PRE_GAME":
-        return "Game hasn't started yet"
 
-    xml = mlb_data.get_game_overview_xml(team_name)
-    tree = ET.parse(xml)
-    root = tree.getroot()
-
-    for data in root:
-        for current_pitcher in data.iter('current_pitcher'):
-            player_id = current_pitcher.attrib['id']
-            current_pitcher = 'http://gdx.mlb.com/images/gameday/mugshots/mlb/'+player_id+'.jpg ' + current_pitcher.attrib['first_name'] + " " + current_pitcher.attrib['last_name'] + " is currently pitching in the "+ team_name + " game. His record is " + current_pitcher.attrib['wins'] + "-" + current_pitcher.attrib['losses'] + "  with a " + current_pitcher.attrib['era'] + " ERA "
-            print(current_pitcher)
-            return current_pitcher
+    
 
 def get_current_batter( team_name ):
     #check other possible statuses
@@ -62,16 +51,7 @@ def get_current_batter( team_name ):
             return current_batter
 
 def get_team_record( team_name ):
-    overview = mlb_data.get_game_overview_dict(team_name)
-
-    if is_team_at_home(team_name):
-        home_win = overview.get('home_win')
-        home_loss = overview.get('home_loss')
-        return mlb_data.teams_dictionary[team_name] + " are "+ home_win + "-" + home_loss
-    else:
-        away_win = overview.get('away_win')
-        away_loss = overview.get('away_loss')
-        return mlb_data.teams_dictionary[team_name] + " are "+ away_win + "-" + away_loss
+    return mlb_data.get_record(team_name)
 
 def get_pitching_line( team_name ):
     game_status = mlb_data.get_game_status(team_name)
@@ -252,31 +232,10 @@ def get_player_season_stats( team_name, player_name ):
 
     return "Sorry, i don't recognize that name, please use the name on the player uniform, or make sure he plays for the " + team_name
 
-def get_player_id( team_name, player_uniform_name ):
-    stats = mlb_data.get_player_stats(team_name)
-    if is_team_at_home(team_name):
-        for stat in stats['home_batting']:
-            name = stat['name'].split(",", 1)[0]
-            if player_uniform_name == name.lower():
-                return stat['id']
-        for stat in stats['home_pitching']:
-            name = stat['name'].split(",", 1)[0]
-            if player_uniform_name == name.lower():
-                return stat['id']
-    else:
-        for stat in stats['away_batting']:
-            name = stat['name'].split(",", 1)[0]
-            if player_uniform_name == name.lower():
-                return stat['id']
-        for stat in stats['away_pitching']:
-            name = stat['name'].split(",", 1)[0]
-            if player_uniform_name == name.lower():
-                return stat['id']
 
-def get_mugshot( team_name, player_uniform_name ):
-    player_id = get_player_id(team_name, player_uniform_name)
-    if player_id != None:
-        return "http://gdx.mlb.com/images/gameday/mugshots/mlb/"+player_id+".jpg"
+
+def get_mugshot(player_name):
+    return mlb_data.get_mugshot(player_name)
 
 def get_how_we_score( team_name ):
     overview = mlb_data.get_game_overview_dict(team_name)
