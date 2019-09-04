@@ -31,7 +31,7 @@ class bot(ch.RoomManager):
         if cmd[0] == "!":
             prfx = True
             cmd = cmd[1:]
-        elif cmd[0] == '$' or cmd[0] == '#':
+        elif cmd[0] == '$' or cmd[0] == '#' or cmd[0] == '.':
             prfx = True
         else:
             prfx = False

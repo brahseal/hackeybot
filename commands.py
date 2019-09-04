@@ -13,7 +13,6 @@ from nhl import leafs
 from mlb import twitter
 
 mlb_commands = {
-
     "score": mlb.get_team_score,
     "batting": mlb.get_current_batter,
     "line": mlb.get_pitching_line,
@@ -29,7 +28,9 @@ mlb_commands = {
     "show": mlb.get_mugshot,
     "howdidwescore": mlb.get_how_we_score,
     "standings": mlb.get_standings,
-    "conditions": mlb.get_conditions
+    "conditions": mlb.get_conditions,
+    "highlight": mlb.get_highlight,
+    "tacos": mlb.tacos
 }
 
 nhl_commands = {
@@ -149,7 +150,7 @@ other_commands = {
         "countdown": leafs.get_countdown,
        # "definition": urbandict.get_random_definition_from,
        # "define": urbandict.get_random_definition_from,
-    
+
 }
 
 meme_gen_commands = {
@@ -163,6 +164,10 @@ meme_gen_commands = {
     "penbox": meme_gen.get_meme_penbox,
 }
 
+premier_commands = {
+    # ".score": premier.get_team_score_for,
+}
+
 def get_message_from_command(cmd, args, player):
     print("Will try to call msg from command:" + cmd)
     if cmd != None and args != None and player == None:
@@ -171,17 +176,22 @@ def get_message_from_command(cmd, args, player):
                 return mlb_commands[cmd](favorite_team.short_name,args)
             return mlb_commands[cmd](args)
         if cmd in nhl_commands:
-            print('1')
             return nhl_commands[cmd](args)
         if cmd in other_commands:
             return other_commands[cmd](args)
         if cmd in meme_gen_commands:
             return meme_gen_commands[cmd](args)
-        if cmd in nba_commands:
-            return nba_commands[cmd](args)
+        if cmd in premier_commands:
+            print("found premier command")
+            return premier_commands[cmd](args)
     elif cmd != None and args == None and player == None:
         if cmd in mlb_commands:
-            return mlb_commands[cmd](favorite_team.short_name)
+            print('HERE1')
+            if cmd == "tacos":
+                print("Will run tacos command")
+                return mlb_commands[cmd]()
+            else:
+                return mlb_commands[cmd](favorite_team.short_name)
         if cmd in other_commands:
             if cmd == "doggo":
                 return other_commands[cmd](None)
@@ -197,3 +207,5 @@ def get_message_from_command(cmd, args, player):
         if cmd in meme_gen_commands:
             mugshot = mlb.get_mugshot(args, player)
             return meme_gen_commands[cmd](mugshot)
+
+get_message_from_command("tacos", None, None)

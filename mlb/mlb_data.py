@@ -46,6 +46,7 @@ teams_dictionary = {
  'diamondbacks': '109',
  'dbacks': '109',
  'd-backs': '109',
+ 'sneks': '109',
  'braves': '144',
  'cubs': '112',
  'reds': '113',
@@ -80,15 +81,16 @@ team_standings = {}
 def get_score(team_name):
     if team_name in teams_dictionary:
         url = 'https://statsapi.mlb.com/api/v1/schedule?sportId=1,51&date='+str(datetime.now().date())+'&teamId='+teams_dictionary[team_name]
+        print(url)
         json = requests.get(url).json()
         url2 = 'https://statsapi.mlb.com/api/v1.1/game/'+str(get_game_id(team_name))+'/feed/live'
         json2 = requests.get(url2).json()
-        if int(json['dates'][0]['totalGames']) > 0:  
-                
+        if int(json['dates'][0]['totalGames']) > 0:
+
             awayTeam = json['dates'][0]['games'][0]['teams']['away']['team']['id']
             homeTeam = json['dates'][0]['games'][0]['teams']['home']['team']['id']
             if json['dates'][0]['games'][0]['status']['abstractGameState'] == 'Final':
-                awayScore = json['dates'][0]['games'][0]['teams']['away']['score']			
+                awayScore = json['dates'][0]['games'][0]['teams']['away']['score']
                 homeScore = json['dates'][0]['games'][0]['teams']['home']['score']
                 return get_short_name(awayTeam)+' ('+str(awayScore)+') @ '+get_short_name(homeTeam)+' ('+str(homeScore)+') [Final]'
             if int(json['dates'][0]['totalGamesInProgress']) == 0:
@@ -96,7 +98,7 @@ def get_score(team_name):
                 return get_short_name(awayTeam)+' @ '+get_short_name(homeTeam)+' '+ time
 
             else:
-                awayScore = json['dates'][0]['games'][0]['teams']['away']['score']			
+                awayScore = json['dates'][0]['games'][0]['teams']['away']['score']
                 homeScore = json['dates'][0]['games'][0]['teams']['home']['score']
                 inning = json2['liveData']['linescore']['currentInningOrdinal']
                 if json2['liveData']['linescore']['isTopInning']:
@@ -111,6 +113,20 @@ def get_score(team_name):
 def get_short_name(team_id):
 	json = requests.get('https://statsapi.mlb.com/api/v1/teams/'+str(team_id)).json()
 	return json['teams'][0]['teamName']
+
+def get_stats_data(team_name):
+    url = 'https://statsapi.mlb.com/api/v1/schedule?sportId=1,51&date='+str(datetime.now().date())+'&teamId='+teams_dictionary[team_name]
+    json = requests.get(url).json()
+    print(json)
+    return json
+
+def get_content_data(team_name):
+    url = 'https://statsapi.mlb.com/api/v1/schedule?sportId=1,51&date='+str(datetime.now().date())+'&teamId='+teams_dictionary[team_name]
+    json = requests.get(url).json()
+    print(json)
+    content_url = json['dates'][0]['games'][0]['content']['link']
+    print(content_url)
+    return requests.get('https://statsapi.mlb.com'+content_url).json()
 
 def get_mugshot(player_name):
 	url = 'http://lookup-service-prod.mlb.com/json/named.search_player_all.bam?sport_code=mlb&active_sw=%27Y%27&name_part=%27'+player_name+'%25%27'
@@ -132,11 +148,11 @@ update_records()
 sched.add_interval_job(update_records, hours=1)
 
 def get_standings(division):
-    output = ''    
+    output = ''
     for i in range(6):
         if standings['records'][i]['division']['id'] == int(division_dictionary[division]):
             for j in range(5):
-                output += (str(j + 1) + ':' + str(standings['records'][i]['teamRecords'][j]['team']['name']) + ' ')                
+                output += (str(j + 1) + ':' + str(standings['records'][i]['teamRecords'][j]['team']['name']) + ' ')
     return output
 
 def get_record(team_name):

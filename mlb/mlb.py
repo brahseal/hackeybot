@@ -29,10 +29,10 @@ def is_team_playing( team_name ):
 def get_team_score( team_name ):
     print(mlb_data.get_score(team_name))
     return mlb_data.get_score(team_name)
-    
 
 
-    
+
+
 
 def get_current_batter( team_name ):
     #check other possible statuses
@@ -258,3 +258,37 @@ def get_how_we_score( team_name ):
 
     last_3_scoring_plays = scoring_plays[-1:]
     return ''.join(last_3_scoring_plays)
+
+def get_highlight( team_name, player_name ):
+    print('called get_highlight' + team_name + player_name)
+    content = mlb_data.get_content_data(team_name)
+    highlights = content['highlights']['highlights']['items']
+    for highlight in highlights:
+        title = highlight['title']
+        if player_name.lower() in title.lower():
+            video_url = highlight['playbacks'][0]['url']
+            return title + " " + video_url
+
+def tacos():
+    json = mlb_data.get_stats_data('sneks')
+    home_team = json['dates'][0]['games'][0]['teams']['home']
+    away_team = json['dates'][0]['games'][0]['teams']['away']
+    status = json['dates'][0]['games'][0]['status']
+    print(home_team)
+    print(away_team)
+    if 'Arizona' in home_team['team']['name']:
+        if home_team['score'] >= 5:
+            return 'FREE TACOS CONFIRMED!!! you get three free crunchy tacos with the purchase of a large drink, from 4-6 pm the day after the game'
+        else:
+            if status['statusCode'] == "I":
+                return "The sneks have not scored 5 runs yet, pray 4 free tacos"
+            else:
+                return "The sneks have not scored 5 runs today, maybe tomorrow :("
+    elif 'Arizona' in away_team['name']:
+        if home_team['score'] >= 5:
+            return 'FREE TACOS CONFIRMED!!! you get three free crunchy tacos with the purchase of a large drink, from 4-6 pm the day after the game'
+        else:
+            if status['statusCode'] == "I":
+                return "The sneks have not scored 5 runs yet, pray 4 free tacos"
+            else:
+                return "The sneks have not scored 5 runs today, maybe tomorrow :("
