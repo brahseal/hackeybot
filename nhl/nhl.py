@@ -26,8 +26,13 @@ def get_pp(team_name):
 def get_record(team_name):
     return nhl_data.get_record(team_name)
 
-def stats(player_name):
-    return nhl_data.stats(player_name)
+def stats(player_name, arg2=None):
+    if arg2 != None:
+        print('2 args')
+        return nhl_data.stats2(player_name, arg2)
+    else:
+        print('1 arg')
+        return nhl_data.stats(player_name)
 
 def get_mugshot(player_name, arg2=None):
     if arg2 != None:

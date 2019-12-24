@@ -1,3 +1,5 @@
+churles = ["praise"]
+
 doomis = ["https://i.imgur.com/TDPU0LB.gif"]
 
 violin = ["http://i.imgur.com/Mqdl3ze.gif"]

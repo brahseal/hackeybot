@@ -11,9 +11,11 @@ from hackey import urbandict
 from nhl import nhl
 from nhl import leafs
 from mlb import twitter
+from nfl import nfl
+
 
 mlb_commands = {
-    "score": mlb.get_team_score,
+    "score": nfl.get_score,
     "batting": mlb.get_current_batter,
     "line": mlb.get_pitching_line,
     "record": mlb.get_team_record,
@@ -58,6 +60,7 @@ nhl_commands = {
 }
 
 hackey_commands = {
+    "churles": hackey.churles,
     "kreidergirl": hackey.kreidergirl,
     "jforced": hackey.jforced,
     "nikki": hackey.nikki,
@@ -168,6 +171,10 @@ premier_commands = {
     # ".score": premier.get_team_score_for,
 }
 
+nfl_commands = {
+    ".score": nfl.get_score,
+}
+
 def get_message_from_command(cmd, args, player):
     print("Will try to call msg from command:" + cmd)
     if cmd != None and args != None and player == None:
@@ -184,6 +191,9 @@ def get_message_from_command(cmd, args, player):
         if cmd in premier_commands:
             print("found premier command")
             return premier_commands[cmd](args)
+        if cmd in nfl_commands:
+            print("nfl")
+            return nfl_commands[cmd](args)
     elif cmd != None and args == None and player == None:
         if cmd in mlb_commands:
             print('HERE1')
@@ -207,5 +217,5 @@ def get_message_from_command(cmd, args, player):
         if cmd in meme_gen_commands:
             mugshot = mlb.get_mugshot(args, player)
             return meme_gen_commands[cmd](mugshot)
+        
 
-get_message_from_command("tacos", None, None)

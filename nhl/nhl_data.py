@@ -18,8 +18,8 @@ year = current_date.get_year()
 month = current_date.get_month()
 day = current_date.get_day()
 
-players = 'http://www.nhl.com/stats/rest/skaters?isAggregate=false&reportType=basic&isGame=false&reportName=skatersummary&sort=[{%22property%22:%22points%22,%22direction%22:%22DESC%22},{%22property%22:%22goals%22,%22direction%22:%22DESC%22},{%22property%22:%22assists%22,%22direction%22:%22DESC%22}]&cayenneExp=gameTypeId=2%20and%20seasonId%3E=20182019%20and%20seasonId%3C=20182019'
-goalies = 'https://api.nhle.com/stats/rest/goalies?isAggregate=false&reportType=goalie_basic&isGame=false&reportName=goaliesummary&sort=[{%22property%22:%22wins%22,%22direction%22:%22DESC%22}]&cayenneExp=gameTypeId=%223%22%20and%20seasonId%3E=20182019%20and%20seasonId%3C=20182019'
+players = 'https://api.nhle.com/stats/rest/en/skater/summary?isAggregate=false&isGame=false&sort=%5B%7B%22property%22:%22points%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22goals%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22assists%22,%22direction%22:%22DESC%22%7D%5D&start=0&limit=100&factCayenneExp=gamesPlayed%3E=1&cayenneExp=gameTypeId=2%20and%20seasonId%3C=20192020%20and%20seasonId%3E=20192020'
+goalies = 'https://api.nhle.com/stats/rest/en/goalie/summary?isAggregate=false&isGame=false&sort=%5B%7B%22property%22:%22wins%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22savePct%22,%22direction%22:%22DESC%22%7D%5D&start=0&limit=50&factCayenneExp=gamesPlayed%3E=1&cayenneExp=gameTypeId=2%20and%20seasonId%3C=20192020%20and%20seasonId%3E=20192020'
 
 
 respPlayers = requests.get(players).json()
@@ -27,9 +27,9 @@ respGoalies = requests.get(goalies).json()
 
 def update_stats():
     global players
-    players = 'http://www.nhl.com/stats/rest/skaters?isAggregate=false&reportType=basic&isGame=false&reportName=skatersummary&sort=[{%22property%22:%22points%22,%22direction%22:%22DESC%22},{%22property%22:%22goals%22,%22direction%22:%22DESC%22},{%22property%22:%22assists%22,%22direction%22:%22DESC%22}]&cayenneExp=gameTypeId=2%20and%20seasonId%3E=20182019%20and%20seasonId%3C=20182019'
+    players = 'https://api.nhle.com/stats/rest/en/skater/summary?isAggregate=false&isGame=false&sort=%5B%7B%22property%22:%22points%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22goals%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22assists%22,%22direction%22:%22DESC%22%7D%5D&start=0&limit=100&factCayenneExp=gamesPlayed%3E=1&cayenneExp=gameTypeId=2%20and%20seasonId%3C=20192020%20and%20seasonId%3E=20192020'
     global goalies
-    goalies = 'http://www.nhl.com/stats/rest/goalies?isAggregate=false&reportType=goalie_basic&isGame=false&reportName=goaliesummary&sort=[{%22property%22:%22wins%22,%22direction%22:%22DESC%22}]&cayenneExp=gameTypeId=2%20and%20seasonId%3E=20182019%20and%20seasonId%3C=20182019'
+    goalies = 'https://api.nhle.com/stats/rest/en/goalie/summary?isAggregate=false&isGame=false&sort=%5B%7B%22property%22:%22wins%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22savePct%22,%22direction%22:%22DESC%22%7D%5D&start=0&limit=50&factCayenneExp=gamesPlayed%3E=1&cayenneExp=gameTypeId=2%20and%20seasonId%3C=20192020%20and%20seasonId%3E=20192020'
     global respPlayers
     respPlayers = requests.get(players).json()
     global respGoalies
@@ -97,7 +97,7 @@ teams_dictionary = {
 
 
 def get_leader(stat_name):
-	leaderJSON = requests.get('http://www.nhl.com/stats/rest/leaders?season=20182019&gameType=2').json()
+	leaderJSON = requests.get('http://www.nhl.com/stats/rest/leaders?season=20192020&gameType=2').json()
 	if stat_name.lower() == 'points' or stat_name.lower() == 'p':
 		return 'Points leader: ' +  str(leaderJSON['skater'][0]['leaders'][0]['fullName']) + ' (' + str(leaderJSON['skater'][0]['leaders'][0]['value']) + ')'
 	if stat_name.lower() == 'goals' or stat_name.lower() == 'g':
@@ -136,7 +136,7 @@ def get_shooting_percentage(player_name):
 
 def get_standings_info(division):
 	output = ''
-	json = requests.get('https://statsapi.web.nhl.com/api/v1/standings?season=20182019').json()
+	json = requests.get('https://statsapi.web.nhl.com/api/v1/standings?season=20192020').json()
 	divisionNum = divisions_dictionary[division]
 	listOfTeams = json['records'][int(divisionNum)]['teamRecords']
 	for x in range(0, len(listOfTeams)):
@@ -239,11 +239,21 @@ def get_all_plays_from(team_name):
 def stats(player_name):
 
 	for x in range(0, len(respPlayers['data'])):
-		if respPlayers['data'][x]['playerLastName'].lower() == player_name.lower():
+		if respPlayers['data'][x]['lastName'].lower() == player_name.lower():
 			return 'GP:' + str(respPlayers['data'][x]['gamesPlayed']) + '  G:' + str(respPlayers['data'][x]['goals']) + '  A:' + str(respPlayers['data'][x]['assists']) + "  P:" + str(respPlayers['data'][x]['points'])
 
 	for x in range(0, len(respGoalies['data'])):
-		if respGoalies['data'][x]['playerLastName'].lower() == player_name.lower():
+		if respGoalies['data'][x]['lastName'].lower() == player_name.lower():
+			return 'GP:' + str(respGoalies['data'][x]['gamesPlayed']) + ' W:' + str(respGoalies['data'][x]['wins']) + ' SV%:' + str(respGoalies['data'][x]['savePctg'])
+
+def stats2(player_name, arg2):
+
+	for x in range(0, len(respPlayers['data'])):
+		if (respPlayers['data'][x]['playerFirstName'].lower() == player_name.lower()) and respPlayers['data'][x]['playerLastName'].lower() == arg2.lower():
+			return 'GP:' + str(respPlayers['data'][x]['gamesPlayed']) + '  G:' + str(respPlayers['data'][x]['goals']) + '  A:' + str(respPlayers['data'][x]['assists']) + "  P:" + str(respPlayers['data'][x]['points'])
+
+	for x in range(0, len(respGoalies['data'])):
+		if (respGoalies['data'][x]['playerFirstName'].lower() == player_name.lower()) and respGoalies['data'][x]['playerLastName'].lower() == arg2.lower():
 			return 'GP:' + str(respGoalies['data'][x]['gamesPlayed']) + ' W:' + str(respGoalies['data'][x]['wins']) + ' SV%:' + str(respGoalies['data'][x]['savePctg'])
 
 def get_schedule_for_next_5_days(team_name):
