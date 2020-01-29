@@ -18,22 +18,6 @@ year = current_date.get_year()
 month = current_date.get_month()
 day = current_date.get_day()
 
-players = 'https://api.nhle.com/stats/rest/en/skater/summary?isAggregate=false&isGame=false&sort=%5B%7B%22property%22:%22points%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22goals%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22assists%22,%22direction%22:%22DESC%22%7D%5D&start=0&limit=100&factCayenneExp=gamesPlayed%3E=1&cayenneExp=gameTypeId=2%20and%20seasonId%3C=20192020%20and%20seasonId%3E=20192020'
-goalies = 'https://api.nhle.com/stats/rest/en/goalie/summary?isAggregate=false&isGame=false&sort=%5B%7B%22property%22:%22wins%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22savePct%22,%22direction%22:%22DESC%22%7D%5D&start=0&limit=50&factCayenneExp=gamesPlayed%3E=1&cayenneExp=gameTypeId=2%20and%20seasonId%3C=20192020%20and%20seasonId%3E=20192020'
-
-
-respPlayers = requests.get(players).json()
-respGoalies = requests.get(goalies).json()
-
-def update_stats():
-    global players
-    players = 'https://api.nhle.com/stats/rest/en/skater/summary?isAggregate=false&isGame=false&sort=%5B%7B%22property%22:%22points%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22goals%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22assists%22,%22direction%22:%22DESC%22%7D%5D&start=0&limit=100&factCayenneExp=gamesPlayed%3E=1&cayenneExp=gameTypeId=2%20and%20seasonId%3C=20192020%20and%20seasonId%3E=20192020'
-    global goalies
-    goalies = 'https://api.nhle.com/stats/rest/en/goalie/summary?isAggregate=false&isGame=false&sort=%5B%7B%22property%22:%22wins%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22savePct%22,%22direction%22:%22DESC%22%7D%5D&start=0&limit=50&factCayenneExp=gamesPlayed%3E=1&cayenneExp=gameTypeId=2%20and%20seasonId%3C=20192020%20and%20seasonId%3E=20192020'
-    global respPlayers
-    respPlayers = requests.get(players).json()
-    global respGoalies
-    respGoalies = requests.get(goalies).json()
 
 def update_time():
     global year
@@ -43,8 +27,7 @@ def update_time():
     global day
     day = current_date.get_day()
 
-sched.add_interval_job(update_time, hours=6)
-sched.add_interval_job(update_stats, hours=1)
+
 divisions_dictionary = {
  'metro': '0',
  'metropolitan': '0',
@@ -95,44 +78,59 @@ teams_dictionary = {
  'knights': '54'
 }
 
+id_dict = {}
+pos_dict = {}
+
+
+def update_ids():
+    for x in teams_dictionary:
+        leaderJSON = requests.get('https://statsapi.web.nhl.com/api/v1/teams/' + teams_dictionary[x] + '/roster').json()
+        for team in range(0,len(leaderJSON['roster'])):
+            id_dict[leaderJSON['roster'][team]['person']['fullName'].lower()] = leaderJSON['roster'][team]['person']['id']
+            id_dict[leaderJSON['roster'][team]['person']['fullName'].split(' ', 1)[-1].lower()] = leaderJSON['roster'][team]['person']['id']
+            pos_dict[leaderJSON['roster'][team]['person']['fullName'].lower()] = leaderJSON['roster'][team]['position']['code']
+            pos_dict[leaderJSON['roster'][team]['person']['fullName'].split(' ', 1)[-1].lower()] = leaderJSON['roster'][team]['position']['code']
+
+
+
+sched.add_interval_job(update_time, hours=6)
+sched.add_interval_job(update_ids, hours=6)
+update_ids()
+
 
 def get_leader(stat_name):
-	leaderJSON = requests.get('http://www.nhl.com/stats/rest/leaders?season=20192020&gameType=2').json()
+	assists = requests.get('https://api.nhle.com/stats/rest/en/leaders/skaters/assists?cayenneExp=season=20192020').json()
+	points = requests.get('https://api.nhle.com/stats/rest/en/leaders/skaters/points?cayenneExp=season=20192020').json()
+	goals = requests.get('https://api.nhle.com/stats/rest/en/leaders/skaters/goals?cayenneExp=season=20192020').json()
+	gaa = requests.get('https://api.nhle.com/stats/rest/en/leaders/goalies/gaa?cayenneExp=season=20192020').json()
+	save = requests.get('https://api.nhle.com/stats/rest/en/leaders/goalies/savePctg?cayenneExp=season=20192020').json()
 	if stat_name.lower() == 'points' or stat_name.lower() == 'p':
-		return 'Points leader: ' +  str(leaderJSON['skater'][0]['leaders'][0]['fullName']) + ' (' + str(leaderJSON['skater'][0]['leaders'][0]['value']) + ')'
+		return 'Points leader: ' +  str(points['data'][0]['player']['fullName']) + ' (' + str(points['data'][0]['points']) + ')'
 	if stat_name.lower() == 'goals' or stat_name.lower() == 'g':
-                return 'Goals leader: ' +  str(leaderJSON['skater'][1]['leaders'][0]['fullName']) + ' (' + str(leaderJSON['skater'][1]['leaders'][0]['value']) + ')'
+		return 'Goals leader: ' +  str(goals['data'][0]['player']['fullName']) + ' (' + str(goals['data'][0]['goals']) + ')'
 	if stat_name.lower() == 'assists' or stat_name.lower() == 'a':
-                return 'Assists leader: ' +  str(leaderJSON['skater'][2]['leaders'][0]['fullName']) + ' (' + str(leaderJSON['skater'][2]['leaders'][0]['value']) + ')'
-	if stat_name.lower() == '+-' or stat_name.lower() == 'pm':
-                return 'Assists leader: ' +  str(leaderJSON['skater'][3]['leaders'][0]['fullName']) + ' (' + str(leaderJSON['skater'][3]['leaders'][0]['valueLabel']) + ')'
+		return 'Assists leader: ' +  str(assists['data'][0]['player']['fullName']) + ' (' + str(assists['data'][0]['assists']) + ')'
 	if stat_name.lower() == 'gaa' or stat_name.lower() == 'ga':
-                return 'Goals against leader: ' +  str(leaderJSON['goalie'][0]['leaders'][0]['fullName']) + ' (' + str(leaderJSON['goalie'][0]['leaders'][0]['valueLabel']) + ')'
+		return 'Goals against leader: ' +  str(gaa['data'][0]['player']['fullName']) + ' (' + str(gaa['data'][0]['gaa']) + ')'
 	if stat_name.lower() == 'save' or stat_name.lower() == 'sv':
-                return 'Save % leader: ' +  str(leaderJSON['goalie'][1]['leaders'][0]['fullName']) + ' (' + str(leaderJSON['goalie'][1]['leaders'][0]['valueLabel']) + ')'
+		return 'Save % leader: ' +  str(save['data'][0]['player']['fullName']) + ' (' + str(save['data'][0]['savePctg']) + ')'
 
 
 def get_age(player_name):
-	for x in range(0, len(respPlayers['data'])):
-		if respPlayers['data'][x]['playerLastName'].lower() == player_name.lower():
-			age = str(respPlayers['data'][x]['playerBirthDate'])
-			birthday = datetime.strptime(age, '%Y-%m-%d')
-			return str(respPlayers['data'][x]['playerName']) + ' is ' + str(calculate_age(birthday)) + ' years old.'
-	for x in range(0, len(respGoalies['data'])):
-		if respGoalies['data'][x]['playerLastName'].lower() == player_name.lower():
-			age = str(respGoalies['data'][x]['playerBirthDate'])
-			birthday = datetime.strptime(age, '%Y-%m-%d')
-			return str(respGoalies['data'][x]['playerName']) + ' is ' + str(calculate_age(birthday)) + ' years old.'
+	player = requests.get('https://statsapi.web.nhl.com/api/v1/people/' + str(id_dict[player_name.lower()])).json()
+	bday = player['people'][0]['birthDate']
+	birthday = datetime.strptime(bday, '%Y-%m-%d')
+	return player['people'][0]['fullName'] + ' is ' + str(calculate_age(birthday)) + ' years old.'
 
 def calculate_age(born):
     	today = date.today()
     	return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
 
 def get_shooting_percentage(player_name):
-
-	for x in range(0, len(respPlayers['data'])):
-		if respPlayers['data'][x]['playerLastName'].lower() == player_name.lower():
-			return str(respPlayers['data'][x]['playerName']) + ' shooting percentage: ' + str(format(respPlayers['data'][x]['shootingPctg'] * 100, '.2f')) + '%'
+	data = requests.get('https://statsapi.web.nhl.com/api/v1/people/' + str(id_dict[player_name.lower()]) + '/stats?stats=statsSingleSeason&season=20192020').json()
+	value = data['stats'][0]['splits'][0]['stat']['shotPct']
+	player = requests.get('https://statsapi.web.nhl.com/api/v1/people/' + str(id_dict[player_name.lower()])).json()
+	return player['people'][0]['fullName'] + ' shooting percentage: ' + str(value) + '%'
 
 def get_standings_info(division):
 	output = ''
@@ -183,25 +181,11 @@ def get_team_info(team_name):
 
 
 def get_mugshot(player_name):
-
-
-	for x in range(0, len(respPlayers['data'])):
-		if respPlayers['data'][x]['playerLastName'].lower() == player_name.lower():
-			return('https://nhl.bamcontent.com/images/headshots/current/168x168/' + str(respPlayers['data'][x]['playerId']) + '.jpg')
-
-	for x in range(0, len(respGoalies['data'])):
-		if respGoalies['data'][x]['playerLastName'].lower() == player_name.lower():
-			return('https://nhl.bamcontent.com/images/headshots/current/168x168/' + str(respGoalies['data'][x]['playerId']) + '.jpg')
+	return('https://nhl.bamcontent.com/images/headshots/current/168x168/' + str(id_dict[player_name.lower()]) + '.jpg')
 
 def get_mugshot2(player_name, arg2):
 	print('in here')
-	for x in range(0, len(respPlayers['data'])):
-		if (respPlayers['data'][x]['playerFirstName'].lower() == player_name.lower()) and respPlayers['data'][x]['playerLastName'].lower() == arg2.lower():
-			return('https://nhl.bamcontent.com/images/headshots/current/168x168/' + str(respPlayers['data'][x]['playerId']) + '.jpg')
-
-	for x in range(0, len(respGoalies['data'])):
-		if respGoalies['data'][x]['playerFirstName'].lower() == player_name.lower() and respGoalies['data'][x]['playerLastName'].lower() == arg2.lower():
-			return('https://nhl.bamcontent.com/images/headshots/current/168x168/' + str(respGoalies['data'][x]['playerId']) + '.jpg')
+	return('https://nhl.bamcontent.com/images/headshots/current/168x168/' + str(id_dict[player_name.lower() + ' ' + arg2.lower()]) + '.jpg')
 
 def get_todays_game_from(team_name):
 	date_string = year + '-' + month + '-' + day
@@ -237,24 +221,18 @@ def get_all_plays_from(team_name):
     return json.loads(resp)['liveData']['plays']
 
 def stats(player_name):
-
-	for x in range(0, len(respPlayers['data'])):
-		if respPlayers['data'][x]['lastName'].lower() == player_name.lower():
-			return 'GP:' + str(respPlayers['data'][x]['gamesPlayed']) + '  G:' + str(respPlayers['data'][x]['goals']) + '  A:' + str(respPlayers['data'][x]['assists']) + "  P:" + str(respPlayers['data'][x]['points'])
-
-	for x in range(0, len(respGoalies['data'])):
-		if respGoalies['data'][x]['lastName'].lower() == player_name.lower():
-			return 'GP:' + str(respGoalies['data'][x]['gamesPlayed']) + ' W:' + str(respGoalies['data'][x]['wins']) + ' SV%:' + str(respGoalies['data'][x]['savePctg'])
+    data = requests.get('https://statsapi.web.nhl.com/api/v1/people/' + str(id_dict[player_name.lower()]) + '/stats?stats=statsSingleSeason&season=20192020').json()
+    if pos_dict[player_name.lower()] == 'G':
+        return 'GP:' + str(data['stats'][0]['splits'][0]['stat']['games']) + ' W:' + str(data['stats'][0]['splits'][0]['stat']['wins']) + ' SV%:' + str(round(data['stats'][0]['splits'][0]['stat']['savePercentage'], 2)) + ' GAA:' + str(round(data['stats'][0]['splits'][0]['stat']['goalAgainstAverage'], 2))
+    else:
+        return 'GP:' + str(data['stats'][0]['splits'][0]['stat']['games']) + '  G:' + str(data['stats'][0]['splits'][0]['stat']['goals']) + '  A:' + str(data['stats'][0]['splits'][0]['stat']['assists']) + "  P:" + str(data['stats'][0]['splits'][0]['stat']['points'])
 
 def stats2(player_name, arg2):
-
-	for x in range(0, len(respPlayers['data'])):
-		if (respPlayers['data'][x]['playerFirstName'].lower() == player_name.lower()) and respPlayers['data'][x]['playerLastName'].lower() == arg2.lower():
-			return 'GP:' + str(respPlayers['data'][x]['gamesPlayed']) + '  G:' + str(respPlayers['data'][x]['goals']) + '  A:' + str(respPlayers['data'][x]['assists']) + "  P:" + str(respPlayers['data'][x]['points'])
-
-	for x in range(0, len(respGoalies['data'])):
-		if (respGoalies['data'][x]['playerFirstName'].lower() == player_name.lower()) and respGoalies['data'][x]['playerLastName'].lower() == arg2.lower():
-			return 'GP:' + str(respGoalies['data'][x]['gamesPlayed']) + ' W:' + str(respGoalies['data'][x]['wins']) + ' SV%:' + str(respGoalies['data'][x]['savePctg'])
+    data = requests.get('https://statsapi.web.nhl.com/api/v1/people/' + str(id_dict[player_name.lower() + " " + arg2.lower()]) + '/stats?stats=statsSingleSeason&season=20192020').json()
+    if pos_dict[player_name.lower() + " " + arg2.lower()] == 'G':
+        return 'GP:' + str(data['stats'][0]['splits'][0]['stat']['games']) + ' W:' + str(data['stats'][0]['splits'][0]['stat']['wins']) + ' SV%:' + str(round(data['stats'][0]['splits'][0]['stat']['savePercentage'], 2)) + ' GAA:' + str(round(data['stats'][0]['splits'][0]['stat']['goalAgainstAverage'], 2))
+    else:
+        return 'GP:' + str(data['stats'][0]['splits'][0]['stat']['games']) + '  G:' + str(data['stats'][0]['splits'][0]['stat']['goals']) + '  A:' + str(data['stats'][0]['splits'][0]['stat']['assists']) + "  P:" + str(data['stats'][0]['splits'][0]['stat']['points'])
 
 def get_schedule_for_next_5_days(team_name):
     tomorrow = current_date.get_tomorrow()
